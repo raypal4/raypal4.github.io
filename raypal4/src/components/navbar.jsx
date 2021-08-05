@@ -10,6 +10,19 @@ class NavBar extends Component {
   }
 
   render() {
+    const NavBarLinks = [
+      {
+        title: "Home",
+        link: "/",
+        icon: "home",
+      },
+      {
+        title: "About",
+        link: "/about",
+        icon: "person",
+      },
+    ];
+
     document.addEventListener("DOMContentLoaded", function () {
       var elems = document.querySelectorAll(".tooltipped");
       var instances = M.Tooltip.init(elems);
@@ -39,28 +52,21 @@ class NavBar extends Component {
         </div>
 
         <ul className="nav-list">
-          <li>
-            <Link
-              className="tooltipped"
-              to="/"
-              data-position="right"
-              data-tooltip="Home"
-            >
-              <i className="material-icons">home</i>
-              <span className="link-name">Homepage</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="tooltipped"
-              to="/about"
-              data-position="right"
-              data-tooltip="About"
-            >
-              <i className="material-icons">person</i>
-              <span className="link-name">About</span>
-            </Link>
-          </li>
+          {NavBarLinks.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link
+                  className="tooltipped"
+                  to={item.link}
+                  data-position="right"
+                  data-tooltip={item.title}
+                >
+                  <i className="material-icons">{item.icon}</i>
+                  <span className="link-name">{item.title}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );
