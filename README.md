@@ -1,5 +1,5 @@
 # raypal4.github.io
-Vue Demo Project with Github free hosting 
+React Project with Github IO hosting 
 
 Link to test site: 
 
