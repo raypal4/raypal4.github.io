@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import M from "materialize-css";
 import "../css/app.css";
 import profilePic from "../assets/profile.jpg";
-
+import { Link } from "react-router-dom";
 class NavBar extends Component {
   menuButtonClick() {
     const sideBar = document.querySelector(".side-bar");
     sideBar.classList.toggle("active");
-    console.log(sideBar);
   }
 
   render() {
@@ -41,26 +40,26 @@ class NavBar extends Component {
 
         <ul className="nav-list">
           <li>
-            <a
+            <Link
               className="tooltipped"
-              href="/"
+              to="/"
               data-position="right"
               data-tooltip="Home"
             >
               <i className="material-icons">home</i>
               <span className="link-name">Homepage</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="tooltipped"
-              href="/about"
+              to="/about"
               data-position="right"
               data-tooltip="About"
             >
               <i className="material-icons">person</i>
               <span className="link-name">About</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
