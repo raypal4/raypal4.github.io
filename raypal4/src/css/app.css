@@ -1,0 +1,105 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Navbar CSS */
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  background: white;
+  color: black;
+  padding: 6px 14px;
+  /* border-right: 1px lightgray solid; */
+}
+
+.side-bar .logo-content .logo {
+  color: black;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.logo-content .logo img {
+  font-size: 20px;
+  border-radius: 12px;
+}
+
+.logo-content .logo .row {
+  margin-bottom: 0px !important;
+}
+
+.logo-content .logo .logo-name {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.logo-content .logo .logo-subtext {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.side-bar #menuBtn {
+  position: absolute;
+  color: black;
+  left: 90%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translatex(-50%);
+}
+
+.side-bar ul {
+  margin-top: 20px;
+}
+
+.side-bar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 0px;
+  list-style: none;
+  border-radius: 12px;
+}
+
+.side-bar ul li a {
+  color: black;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.side-bar ul li a i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.side-bar ul li a:hover {
+  background: black;
+  color: white;
+}
+
+.nav-list {
+  margin-top: 30px !important;
+}
+
+/* Homepage CSS */
+.content-container {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 240px);
+  left: 250px;
+}

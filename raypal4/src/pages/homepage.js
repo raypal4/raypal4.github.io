@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
+import "../css/homepage.css";
 
 class homepage extends Component {
   state = {};
