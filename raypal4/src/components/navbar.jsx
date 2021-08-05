@@ -4,7 +4,18 @@ import "../css/app.css";
 import profilePic from "../assets/profile.jpg";
 
 class NavBar extends Component {
+  menuButtonClick() {
+    const sideBar = document.querySelector(".side-bar");
+    sideBar.classList.toggle("active");
+    console.log(sideBar);
+  }
+
   render() {
+    document.addEventListener("DOMContentLoaded", function () {
+      var elems = document.querySelectorAll(".tooltipped");
+      var instances = M.Tooltip.init(elems);
+    });
+
     return (
       <div className="side-bar z-depth-1">
         <div className="logo-content">
@@ -19,20 +30,34 @@ class NavBar extends Component {
               </div>
             </div>
           </div>
-          <i className="material-icons" id="menuBtn">
+          <i
+            className="material-icons"
+            id="menuBtn"
+            onClick={this.menuButtonClick.bind(this)}
+          >
             menu
           </i>
         </div>
 
         <ul className="nav-list">
           <li>
-            <a href="/">
+            <a
+              className="tooltipped"
+              href="/"
+              data-position="right"
+              data-tooltip="Home"
+            >
               <i className="material-icons">home</i>
               <span className="link-name">Homepage</span>
             </a>
           </li>
           <li>
-            <a href="/about">
+            <a
+              className="tooltipped"
+              href="/about"
+              data-position="right"
+              data-tooltip="About"
+            >
               <i className="material-icons">person</i>
               <span className="link-name">About</span>
             </a>

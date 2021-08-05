@@ -11,11 +11,15 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 240px;
+  width: 78px;
   background: white;
   color: black;
   padding: 6px 14px;
-  /* border-right: 1px lightgray solid; */
+  transition: all 0.5s ease;
+}
+
+.side-bar.active {
+  width: 240px;
 }
 
 .side-bar .logo-content .logo {
@@ -23,6 +27,16 @@ body {
   display: flex;
   width: 100%;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.side-bar.active .logo-content .logo {
+  opacity: 1;
+}
+
+.logo-content {
+  height: 50px;
 }
 
 .logo-content .logo img {
@@ -30,24 +44,32 @@ body {
   border-radius: 12px;
 }
 
-.logo-content .logo .row {
-  margin-bottom: 0px !important;
-}
-
 .logo-content .logo .logo-name {
   font-size: 14px;
   font-weight: 400;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 
 .logo-content .logo .logo-subtext {
   font-size: 13px;
   font-weight: 300;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.side-bar.active .logo-content .logo .logo-name {
+  opacity: 1;
+}
+
+.side-bar.active .logo-content .logo .logo-subtext {
+  opacity: 1;
 }
 
 .side-bar #menuBtn {
   position: absolute;
   color: black;
-  left: 90%;
+  left: 50%;
   top: 6px;
   font-size: 20px;
   height: 50px;
@@ -55,6 +77,10 @@ body {
   text-align: center;
   line-height: 50px;
   transform: translatex(-50%);
+}
+
+.side-bar.active #menuBtn {
+  left: 90%;
 }
 
 .side-bar ul {
@@ -96,10 +122,25 @@ body {
   margin-top: 30px !important;
 }
 
+.side-bar .link-name {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.side-bar.active .link-name {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* Homepage CSS */
 .content-container {
   position: absolute;
   height: 100%;
+  width: calc(100% - 100px);
+  left: 100px;
+  transition: all 0.5s ease;
+}
+
+.side-bar.active ~ .content-container {
   width: calc(100% - 240px);
   left: 250px;
 }
