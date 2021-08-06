@@ -46,7 +46,11 @@ const NavBar = () => {
             <div className="logo">
               <div className="row">
                 <div className="col s4">
-                  <img className="responsive-img" src={profilePic}></img>
+                  <img
+                    className="responsive-img"
+                    src={profilePic}
+                    alt="Profile Picture"
+                  ></img>
                 </div>
                 <div className="col s8">
                   <div className="logo-name">Raynold Tan</div>
