@@ -13,6 +13,7 @@ const Toggle = ({ theme, toggleTheme }) => {
     <React.Fragment>
       <div id="darkModeSwitch" className="switch" onChange={toggleTheme}>
         <label>
+          <p className="display-none">Dark Mode Label</p>
           <input id="switchCB" type="checkbox"></input>
           <span className="lever"></span>
         </label>

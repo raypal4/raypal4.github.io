@@ -182,3 +182,7 @@ body {
   width: calc(100% - 240px);
   left: 250px;
 }
+
+.display-none {
+  display: none;
+}
