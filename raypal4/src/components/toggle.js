@@ -16,7 +16,7 @@ const Toggle = ({ theme, toggleTheme }) => {
           <input id="switchCB" type="checkbox"></input>
           <span className="lever"></span>
         </label>
-        <i className="material-icons">lightbulb_outline</i>
+        <i className="material-icons">wb_sunny</i>
       </div>
     </React.Fragment>
   );
