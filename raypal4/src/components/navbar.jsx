@@ -3,74 +3,91 @@ import M from "materialize-css";
 import "../css/app.css";
 import profilePic from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
-class NavBar extends Component {
-  menuButtonClick() {
+
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./globalstyle.js";
+import { lightTheme, darkTheme } from "./theme.js";
+import { DarkMode } from "./darkmode.js";
+import Toggle from "./toggle.js";
+
+const NavBar = () => {
+  const menuButtonClick = () => {
     const sideBar = document.querySelector(".side-bar");
     sideBar.classList.toggle("active");
-  }
+  };
 
-  render() {
-    const NavBarLinks = [
-      {
-        title: "Home",
-        link: "/",
-        icon: "home",
-      },
-      {
-        title: "About",
-        link: "/about",
-        icon: "person",
-      },
-    ];
+  const [theme, themeToggler, mountedComponent] = DarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
 
-    document.addEventListener("DOMContentLoaded", function () {
-      var elems = document.querySelectorAll(".tooltipped");
-      var instances = M.Tooltip.init(elems);
-    });
+  const NavBarLinks = [
+    {
+      title: "Home",
+      link: "/",
+      icon: "home",
+    },
+    {
+      title: "About",
+      link: "/about",
+      icon: "person",
+    },
+  ];
 
-    return (
-      <div className="side-bar z-depth-1">
-        <div className="logo-content">
-          <div className="logo">
-            <div className="row">
-              <div className="col s4">
-                <img className="responsive-img" src={profilePic}></img>
-              </div>
-              <div className="col s8">
-                <div className="logo-name">Raynold Tan</div>
-                <div className="logo-subtext">SE Developer</div>
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".tooltipped");
+    var instances = M.Tooltip.init(elems);
+  });
+
+  return (
+    <ThemeProvider theme={themeMode}>
+      <>
+        <GlobalStyles />
+        <div className="side-bar z-depth-1">
+          <div className="logo-content">
+            <div className="logo">
+              <div className="row">
+                <div className="col s4">
+                  <img className="responsive-img" src={profilePic}></img>
+                </div>
+                <div className="col s8">
+                  <div className="logo-name">Raynold Tan</div>
+                  <div className="logo-subtext">SE Developer</div>
+                </div>
               </div>
             </div>
+            <i
+              className="material-icons"
+              id="menuBtn"
+              onClick={menuButtonClick.bind(this)}
+            >
+              menu
+            </i>
           </div>
-          <i
-            className="material-icons"
-            id="menuBtn"
-            onClick={this.menuButtonClick.bind(this)}
-          >
-            menu
-          </i>
-        </div>
 
-        <ul className="nav-list">
-          {NavBarLinks.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link
-                  className="tooltipped"
-                  to={item.link}
-                  data-position="right"
-                  data-tooltip={item.title}
-                >
-                  <i className="material-icons">{item.icon}</i>
-                  <span className="link-name">{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
-}
+          <ul className="nav-list">
+            {NavBarLinks.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link
+                    className="tooltipped"
+                    to={item.link}
+                    data-position="right"
+                    data-tooltip={item.title}
+                  >
+                    <i className="material-icons">{item.icon}</i>
+                    <span className="link-name">{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+
+            <li>
+              <Toggle theme={theme} toggleTheme={themeToggler} />
+            </li>
+          </ul>
+        </div>
+      </>
+    </ThemeProvider>
+  );
+};
 
 export default NavBar;

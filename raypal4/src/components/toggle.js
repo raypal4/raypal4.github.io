@@ -5,7 +5,6 @@ import styled from "styled-components";
 const Toggle = ({ theme, toggleTheme }) => {
   return (
     <React.Fragment>
-      <p>Dark Mode</p>
       <div className="switch" onChange={toggleTheme}>
         <label>
           <input type="checkbox"></input>

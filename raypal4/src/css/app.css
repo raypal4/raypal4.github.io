@@ -131,6 +131,36 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+
+.side-bar ul li .switch {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.side-bar ul li .switch {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  margin-left: -8px;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #fa3;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #f93;
+}
+
 /* Homepage CSS */
 .content-container {
   position: absolute;
