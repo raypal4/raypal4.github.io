@@ -161,6 +161,14 @@ body {
   background-color: #f93;
 }
 
+.side-bar.active .switch i {
+  opacity: 1;
+}
+
+.switch i {
+  opacity: 0;
+}
+
 /* Homepage CSS */
 .content-container {
   position: absolute;

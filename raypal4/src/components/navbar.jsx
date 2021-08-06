@@ -80,7 +80,11 @@ const NavBar = () => {
               );
             })}
 
-            <li>
+            <li
+              className="tooltipped"
+              data-position="right"
+              data-tooltip="Dark Mode"
+            >
               <Toggle theme={theme} toggleTheme={themeToggler} />
             </li>
           </ul>
