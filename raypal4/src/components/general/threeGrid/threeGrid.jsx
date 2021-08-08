@@ -14,7 +14,7 @@ class ThreeGrid extends Component {
                 <img
                   className="grid-image"
                   src={this.props.img1}
-                  alt="Coffee Boy"
+                  alt="Coffee Boi"
                 />
                 <h3 className="grid-title">{this.props.title}</h3>
                 <h4 className="grid-subtitle">{this.props.sub1}</h4>
