@@ -24,6 +24,14 @@ body {
   margin-bottom: 0px;
 }
 
+.grid-image {
+  width: auto;
+  height: 50vh;
+  margin-top: 100px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
 .grid-title {
   color: var(--primary-text-color);
   text-transform: uppercase;
