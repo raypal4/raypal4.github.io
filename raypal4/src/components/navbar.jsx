@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
-import "../css/app.css";
+import "../app.css";
 import profilePic from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
 
