@@ -16,8 +16,12 @@ body {
   }
 
   .grid-image {
-    margin-top: 0px;
-    height: 100px;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .page-logo {
+    margin-left: 20px !important;
   }
 }
 
@@ -29,10 +33,16 @@ body {
   margin-bottom: 0px;
 }
 
+.grid-container .content-continer {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .grid-image {
   width: 100%;
-  height: 50vh;
-  margin-top: 80px;
+  min-height: 300px;
+  margin-top: 20px;
 }
 
 .grid-title {
@@ -53,4 +63,9 @@ body {
 .grid-3 {
   background: var(--dark-primary-color);
   height: 50vh;
+}
+
+.page-logo {
+  width: 70px;
+  margin-left: 50px;
 }
