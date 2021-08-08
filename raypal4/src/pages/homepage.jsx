@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ThreeGrid from "../components/general/threeGrid/threeGrid.jsx";
+import coffeeboy from "../assets/coffeeboy.svg";
 
 class homepage extends Component {
   state = {};
@@ -8,8 +9,14 @@ class homepage extends Component {
       <react-fragement>
         <ThreeGrid
           title="Hello world! I'm Ray!"
-          title2="title 2"
-          title3="title 3"
+          sub1="Welcome to my sandbox where i showcase some cool random stuff"
+          img1={coffeeboy}
+          title2="In Progress..."
+          sub2=""
+          img2=""
+          title3="In Progress..."
+          sub3=""
+          img3=""
         />
       </react-fragement>
     );
