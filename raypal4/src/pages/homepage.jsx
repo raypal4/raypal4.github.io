@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import HeaderTitle from "../components/general/headerTitle/headerTitle";
+import ThreeGrid from "../components/general/threeGrid/threeGrid.jsx";
 
 class homepage extends Component {
   state = {};
   render() {
     return (
       <react-fragement>
-        <HeaderTitle title="Welcome!" />
+        <ThreeGrid title="Welcome!" />
       </react-fragement>
     );
   }
