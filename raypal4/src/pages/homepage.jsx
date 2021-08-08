@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import M from "materialize-css";
-import "../css/homepage.css";
+import ThreeGrid from "../components/general/threeGrid/threeGrid.jsx";
 
 class homepage extends Component {
   state = {};
   render() {
-    return <h1>Hello world</h1>;
+    return (
+      <react-fragement>
+        <ThreeGrid title="Welcome!" />
+      </react-fragement>
+    );
   }
 }
 

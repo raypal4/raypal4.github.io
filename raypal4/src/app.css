@@ -1,8 +1,20 @@
 body {
-  position: relative;
+  /* position: relative;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; */
+}
+
+/* Color Pallet */
+:root {
+  --dark-primary-color: #0e1d28;
+  --default-primary-color: #ff6464;
+  --light-primary-color: #0c3543;
+  --text-primary-color: #ffffff;
+  --accent-color: #416f7f;
+  --primary-text-color: #114b5f;
+  --secondary-text-color: #0c3543;
+  --divider-color: #bdbdbd;
 }
 
 /* Navbar CSS */
@@ -113,10 +125,10 @@ body {
   text-align: center;
 }
 
-.side-bar ul li a:hover {
+/* .side-bar ul li a:hover {
   background: black;
   color: white;
-}
+} */
 
 .nav-list {
   margin-top: 30px !important;
@@ -154,11 +166,11 @@ body {
 }
 
 .switch label input[type="checkbox"]:checked + .lever {
-  background-color: #fa3;
+  background-color: var(--default-primary-color);
 }
 
 .switch label input[type="checkbox"]:checked + .lever:after {
-  background-color: #f93;
+  background-color: var(--default-primary-color);
 }
 
 .side-bar.active .switch i {
@@ -173,14 +185,14 @@ body {
 .content-container {
   position: absolute;
   height: 100%;
-  width: calc(100% - 100px);
-  left: 100px;
+  width: calc(100% - 78px);
+  left: 78px;
   transition: all 0.5s ease;
 }
 
 .side-bar.active ~ .content-container {
   width: calc(100% - 240px);
-  left: 250px;
+  left: 240px;
 }
 
 .display-none {

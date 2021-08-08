@@ -3,7 +3,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    font-family: 'Poppins', sans-serif;
     transition: all 0.50s linear;
   }
 
@@ -13,14 +13,35 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   .side-bar #menuBtn{
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.text};
   }
 
   .side-bar .logo-content .logo {
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.text};
+  }
+
+  .side-bar ul li a:hover {
+    color: ${({ theme }) => theme.background} !important;
+    background: ${({ theme }) => theme.text} !important;
   }
 
   .side-bar ul li a {
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.text};
+  }
+
+  .grid-title{
+    color: ${({ theme }) => theme.gridtext};
+  }
+  
+  .grid-1 {
+    background: ${({ theme }) => theme.grid1};
+  }
+  
+  .grid-2 {
+    background: ${({ theme }) => theme.grid2};
+  }
+  
+  .grid-3 {
+    background: ${({ theme }) => theme.grid3};
   }
   `;
