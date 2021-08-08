@@ -14,6 +14,15 @@ body {
   .grid {
     height: 100vh !important;
   }
+
+  .grid-image {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .page-logo {
+    margin-left: 20px !important;
+  }
 }
 
 .grid {
@@ -24,9 +33,35 @@ body {
   margin-bottom: 0px;
 }
 
+.grid-container .content-continer {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-image {
+  width: 100%;
+  min-height: 300px;
+  margin-top: 20px;
+}
+
 .grid-title {
-  color: var(--primary-text-color);
-  text-transform: uppercase;
+  color: var(--text-primary-color);
+}
+
+.grid-subtitle {
+  color: var(--text-primary-color);
+  font-family: "Merriweather", serif;
+}
+
+.grid-title::after {
+  display: block;
+  position: relative;
+  margin-left: 3px;
+  width: 40px;
+  height: 5px;
+  background: #fff;
+  content: "";
 }
 
 .grid-1 {
@@ -42,4 +77,9 @@ body {
 .grid-3 {
   background: var(--dark-primary-color);
   height: 50vh;
+}
+
+.page-logo {
+  width: 60px;
+  margin-left: 60px;
 }
