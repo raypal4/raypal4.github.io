@@ -11,7 +11,6 @@ class InstaComponent extends Component {
         "IGQVJXdHlTOWNNR3EzbXRydWVyLTZAPakZAQcEI3M1NaY1ZAHWHFja0l6clhQaW1OcjcwbWkxTlA3SjNIWjcwbW5uelBMQkxFMFdQYlVLVlM2LUdFckdNczByZAmRRdmcxRWFnUm1fZA3Bn",
 
       filter: function (image) {
-        console.log(image);
         if (image.type === "video") {
           count += 1;
           if (count == 1) {
