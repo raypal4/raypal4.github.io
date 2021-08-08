@@ -5,10 +5,10 @@ import profilePic from "../assets/profile.jpg";
 import { Link } from "react-router-dom";
 
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./globalstyle.js";
-import { lightTheme, darkTheme } from "./theme.js";
-import { DarkMode } from "./darkmode.js";
-import Toggle from "./toggle.js";
+import { GlobalStyles } from "./globalstyle.jsx";
+import { lightTheme, darkTheme } from "./theme.jsx";
+import { DarkMode } from "./darkmode.jsx";
+import Toggle from "./toggle.jsx";
 
 const NavBar = () => {
   const menuButtonClick = () => {
