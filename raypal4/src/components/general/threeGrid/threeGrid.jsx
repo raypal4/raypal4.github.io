@@ -15,6 +15,9 @@ class ThreeGrid extends Component {
               <div className="content-continer">
                 <img className="grid-image" src={coffeeboy} alt="CoffeeBoy" />
                 <h3 className="grid-title">{this.props.title}</h3>
+                <h4 className="grid-subtitle">
+                  Welcome to my sandbox where i showcase some cool random stuff
+                </h4>
               </div>
             </div>
             <div className="col s12 m5 l5">

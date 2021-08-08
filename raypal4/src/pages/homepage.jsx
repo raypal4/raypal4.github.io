@@ -6,7 +6,11 @@ class homepage extends Component {
   render() {
     return (
       <react-fragement>
-        <ThreeGrid title="Welcome!" title2="title 2" title3="title 3" />
+        <ThreeGrid
+          title="Hello world! I'm Ray!"
+          title2="title 2"
+          title3="title 3"
+        />
       </react-fragement>
     );
   }
