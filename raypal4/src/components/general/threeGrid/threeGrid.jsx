@@ -9,7 +9,7 @@ class ThreeGrid extends Component {
       <React.Fragment>
         <div className="grid-container">
           <div className="row">
-            <Link to="/">
+            <Link to={this.props.link1}>
               <div className="col s12 m7 l7 grid grid-1">
                 <img className="page-logo" src={RT} alt="RT" />
                 <div className="content-continer">
@@ -26,7 +26,7 @@ class ThreeGrid extends Component {
 
             <div className="col s12 m5 l5">
               <div className="row">
-                <Link to="/">
+                <Link to={this.props.link2}>
                   <div className="col s12 m12 l12 grid grid-2">
                     <div className="content-continer">
                       <img
@@ -39,7 +39,7 @@ class ThreeGrid extends Component {
                     </div>
                   </div>
                 </Link>
-                <Link to="/">
+                <Link to={this.props.link3}>
                   <div className="col s12 m12 l12 grid grid-3">
                     <div className="content-continer">
                       <img
