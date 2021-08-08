@@ -31,7 +31,7 @@ class InstaComponent extends Component {
     return (
       <React.Fragment>
         <div id="instafeed" className="feed-container">
-          <h1>My Piano Covers ~</h1>
+          <h1>Piano Covers ~</h1>
           <p className="feed-subtitle">
             A mini component using instafeed.js to pull out instagram video feed
           </p>

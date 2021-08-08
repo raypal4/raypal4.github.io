@@ -30,6 +30,11 @@ const NavBar = () => {
       link: "/about",
       icon: "person",
     },
+    {
+      title: "My Music",
+      link: "/music",
+      icon: "music_video",
+    },
   ];
 
   document.addEventListener("DOMContentLoaded", function () {
