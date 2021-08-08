@@ -14,6 +14,11 @@ body {
   .grid {
     height: 100vh !important;
   }
+
+  .grid-image {
+    margin-top: 0px;
+    height: 100px;
+  }
 }
 
 .grid {
@@ -25,11 +30,9 @@ body {
 }
 
 .grid-image {
-  width: auto;
+  width: 100%;
   height: 50vh;
-  margin-top: 100px;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-top: 80px;
 }
 
 .grid-title {

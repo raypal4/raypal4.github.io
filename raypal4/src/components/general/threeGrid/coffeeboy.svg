@@ -1,10 +1,10 @@
 <svg width="879" height="474" viewBox="0 0 879 474" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
     #head {
-        animation: headbob 0.5s ease-in-out infinite alternate;
+        animation: headbob 1s ease-in-out infinite alternate;
         transform-origin: bottom;
     }
-    #coffeeSteam2 {
+    #coffeeSteam1 {
         opacity: 0;
         animation: 5.5s opacity infinite;
     }
@@ -33,17 +33,23 @@
         35% {opacity: 1}
         65% {opacity: 1} 
         85% {opacity: 0}
+        from{
+            transform: rotateX(0deg);
+        }
+        to{
+            transform: rotateX(10deg);
+        }
     }
     @keyframes headbob {
         from{
             transform: rotateX(0deg);
         }
         to{
-            transform: rotateX(20deg);
+            transform: rotateX(10deg);
         }
     }
-    #coffeeSteam2 {animation-delay: 0.1s}
-    #coffeeSteam1 {animation-delay: 0.5s}
+    #coffeeSteam2 {animation-delay: 0.5s}
+    #coffeeSteam1 {animation-delay: 1.5s}
     #music-grp-1 {animation-delay: 0.5s}
     #music-grp-2 {animation-delay: 1.0s}
     #music-grp-3 {animation-delay: 1.5s}
