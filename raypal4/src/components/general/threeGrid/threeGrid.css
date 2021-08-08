@@ -12,12 +12,19 @@ body {
   }
 
   .grid {
-    height: 100vh !important;
+    height: 550px !important;
   }
 
   .grid-image {
     height: auto !important;
     min-height: auto !important;
+  }
+
+  .side-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 100px !important;
   }
 
   .page-logo {
@@ -27,6 +34,7 @@ body {
 
 .grid {
   transition: all 0.5s ease;
+  pointer-events: auto;
 }
 
 .grid-container .row {
@@ -41,7 +49,14 @@ body {
 
 .grid-image {
   width: 100%;
-  min-height: 300px;
+  max-height: 300px;
+  margin-top: 20px;
+}
+
+.side-image {
+  width: 40%;
+  max-height: 300px;
+  min-height: 100px;
   margin-top: 20px;
 }
 
@@ -57,8 +72,8 @@ body {
 .grid-title::after {
   display: block;
   position: relative;
-  margin-left: 3px;
-  width: 40px;
+  margin-left: 2px;
+  width: 25px;
   height: 5px;
   background: #fff;
   content: "";
