@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     font-family: 'Poppins', sans-serif;
-    transition: all 0.50s linear;
+    transition: all 0.5s ease;
   }
 
   .side-bar{
@@ -44,4 +44,17 @@ export const GlobalStyles = createGlobalStyle`
   .grid-3 {
     background: ${({ theme }) => theme.grid3};
   }
+
+  .card{
+    background: ${({ theme }) => theme.background};
+  }
+
+  .card-title{
+    color: ${({ theme }) => theme.text};
+  }
+
+  #instafeed .card-content p {
+    color: ${({ theme }) => theme.text};
+  }
+  
   `;

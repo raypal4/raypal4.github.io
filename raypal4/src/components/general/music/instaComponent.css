@@ -1,5 +1,12 @@
 .feed-container {
-  width: 80%;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.feed-container .inner-container {
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -9,6 +16,18 @@
 }
 
 .video-container {
-  max-height: 200px;
-  min-height: 200px;
+  max-height: 300px;
+}
+
+#instafeed .card-action a {
+  color: var(--default-primary-color);
+}
+
+#instafeed .card-content p {
+  color: var(--text-primary-color);
+  transition: all 0.5s ease;
+}
+
+#instafeed .card-title {
+  font-size: 1.3em;
 }
