@@ -22,7 +22,7 @@ class InstaComponent extends Component {
         }
       },
       template:
-        '{{customTagOpen}}<div class="col s12 m4 l4"><div class="card"><div class="video-container"><video width="100%" height="300px" controls loop><source src={{model.media_url}} type="video/mp4" /></video></div><div class="card-content"><span class="card-title">{{caption}}</span></div><div class="card-action"><a href={{link}}>Instagram</a></div></div></div>',
+        '{{customTagOpen}}<div class="col s12 m4 l4"><div class="card"><div class="video-container"><video width="100%" controls loop><source src={{model.media_url}} type="video/mp4" /></video></div><div class="card-content"><span class="card-title">{{caption}}</span></div><div class="card-action"><a href={{link}}>Instagram</a></div></div></div>',
     });
     feed.run();
   }
@@ -31,11 +31,15 @@ class InstaComponent extends Component {
     return (
       <div className="inner-container">
         <div id="instafeed">
-          <h1>Piano Covers ~</h1>
-          <p className="feed-subtitle">
-            A mini component using instafeed.js to pull out instagram video
-            feed. Pardon the latency, still trying to improve it.
-          </p>
+          <div className="row">
+            <div className="col s12 m12 l12">
+              <h1>Piano Covers ~</h1>
+              <p className="feed-subtitle">
+                A mini component using instafeed.js to pull out instagram video
+                feed. Pardon the latency, still trying to improve it.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     );
