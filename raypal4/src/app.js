@@ -40,7 +40,7 @@ const App = () => {
           <animated.div key={key} style={props}>
             <Switch location={item}>
               <Route path="/" exact component={HomePage}></Route>
-              <Route path="/about" exact component={About}></Route>
+              {/* <Route path="/about" exact component={About}></Route> */}
               <Route path="/music" exact component={InstaPiano}></Route>
             </Switch>
           </animated.div>
