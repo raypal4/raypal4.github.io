@@ -11,7 +11,7 @@ class homepage extends Component {
       <react-fragement>
         <div className="home-body">
           <ThreeGrid
-            title="Hello world! I'm Ray!"
+            title="Hello-world!-I'm-Ray!"
             sub1="Welcome to my sandbox where i showcase some cool random stuff"
             img1={coffeeboy}
             link1="/"
