@@ -19,7 +19,7 @@ class homepage extends Component {
             sub2="Awesome projects i have worked on with amazing people"
             img2={minions}
             link2="/"
-            title3="Some Random Music"
+            title3="Random Music"
             sub3="Piano songs i have attempted over the years, have mercy"
             img3={musicblob}
             link3="/music"
