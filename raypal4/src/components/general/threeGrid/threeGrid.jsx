@@ -1,10 +1,45 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import "./threeGrid.css";
 import RT from "./RT.svg";
 import { Link } from "react-router-dom";
+import { useSpring, animated, to } from "react-spring";
 
 class ThreeGrid extends Component {
   render() {
+    const SqueezeSpring = ({ children }) => {
+      const [state, toggle] = useState(false);
+      const { x, y } = useSpring({
+        from: { x: !state ? 1 : 0, y: !state ? 1 : 0 },
+        to: [{ x: 1, y: 1 }],
+        config: { mass: 0.5, tension: 120, friction: 2, precision: 0.001 },
+        reset: state,
+        onStart: (state) => toggle(false),
+      });
+
+      return (
+        <animated.div
+          onMouseEnter={() => toggle(true)}
+          style={{
+            transform: to(
+              [
+                x.to({
+                  range: [0, 0.3, 1],
+                  output: [1, 1.3, 1],
+                }),
+                y.to({
+                  range: [0, 0.3, 1],
+                  output: [1, 0.7, 1],
+                }),
+              ],
+              (x, y) => `scale(${x},${y})`
+            ),
+          }}
+        >
+          {children}
+        </animated.div>
+      );
+    };
+
     return (
       <React.Fragment>
         <div className="grid-container">
@@ -18,7 +53,14 @@ class ThreeGrid extends Component {
                     src={this.props.img1}
                     alt="Coffee Boi"
                   />
-                  <h4 className="grid-title">{this.props.title}</h4>
+                  <h4 className="grid-title">
+                    {" "}
+                    <div className="jeader">
+                      {this.props.title.split("").map((word, key) => (
+                        <SqueezeSpring key={key}>{word}</SqueezeSpring>
+                      ))}
+                    </div>
+                  </h4>
                   <h4 className="grid-subtitle">{this.props.sub1}</h4>
                 </div>
               </div>
@@ -34,7 +76,14 @@ class ThreeGrid extends Component {
                         src={this.props.img2}
                         alt="minions"
                       />
-                      <h4 className="grid-title">{this.props.title2}</h4>
+                      <h4 className="grid-title">
+                        {" "}
+                        <div className="jeader">
+                          {this.props.title2.split("").map((word, key) => (
+                            <SqueezeSpring key={key}>{word}</SqueezeSpring>
+                          ))}
+                        </div>
+                      </h4>
                       <h5 className="grid-subtitle">{this.props.sub2}</h5>
                     </div>
                   </div>
@@ -47,7 +96,14 @@ class ThreeGrid extends Component {
                         src={this.props.img3}
                         alt="musicblob"
                       />
-                      <h4 className="grid-title">{this.props.title3}</h4>
+                      <h4 className="grid-title">
+                        {" "}
+                        <div className="jeader">
+                          {this.props.title3.split("").map((word, key) => (
+                            <SqueezeSpring key={key}>{word}</SqueezeSpring>
+                          ))}
+                        </div>
+                      </h4>
                       <h5 className="grid-subtitle">{this.props.sub3}</h5>
                     </div>
                   </div>

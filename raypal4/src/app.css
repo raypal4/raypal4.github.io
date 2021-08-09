@@ -207,3 +207,8 @@ body {
 .card {
   transition: all 0.5s ease;
 }
+
+.jeader {
+  display: flex;
+  word-spacing: 300px !important;
+}
