@@ -22,7 +22,7 @@ class InstaComponent extends Component {
         }
       },
       template:
-        '{{customTagOpen}}<div class="col s12 m4 l4"><div class="card"><div class="video-container"><video width="100%" controls loop><source src={{model.media_url}} type="video/mp4" /></video></div><div class="card-content"><span class="card-title">{{caption}}</span></div><div class="card-action"><a href={{link}}>Instagram</a></div></div></div>',
+        '{{customTagOpen}}<div class="col s12 m4 l4"><div class="card"><div class="video-container"><video preload="none" poster={{image}} width="100%" controls loop><source src={{model.media_url}} type="video/mp4" /></video></div><div class="card-content"><span class="card-title">{{caption}}</span></div><div class="card-action"><a href={{link}}>View on Instagram</a></div></div></div>',
     });
     feed.run();
   }
