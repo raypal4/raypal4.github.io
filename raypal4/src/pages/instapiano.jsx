@@ -6,7 +6,9 @@ class Instapiano extends Component {
   render() {
     return (
       <React.Fragment>
-        <InstaComponent />
+        <div className="feed-container">
+          <InstaComponent />
+        </div>
       </React.Fragment>
     );
   }
