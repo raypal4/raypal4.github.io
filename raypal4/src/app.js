@@ -1,25 +1,19 @@
-import React, {
-  useEffect,
-  useState,
-  Component,
-  useContext,
-  Switch,
-} from "react";
+import React, { useEffect, useContext } from "react";
 import NavBar from "./components/navbar.jsx";
 import HomePage from "./pages/homepage.jsx";
 import About from "./pages/about.jsx";
 import InstaPiano from "./pages/instapiano.jsx";
 import { Route, useLocation } from "react-router-dom";
-import { __RouterContext } from "react-router";
+import { __RouterContext, Switch } from "react-router";
 import { useTransition, animated } from "react-spring";
 
 const App = () => {
-  var { location } = useContext(__RouterContext);
+  const location = useLocation();
 
   const transitions = useTransition(location, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
   });
 
   const menuButtonClickMain = () => {
@@ -41,13 +35,13 @@ const App = () => {
         className="content-container"
         onClick={menuButtonClickMain.bind(this)}
       >
-        {transitions((props, item) => (
-          <animated.div style={props}>
-            <switch location={item}>
+        {transitions((props, item, key) => (
+          <animated.div key={key} style={props}>
+            <Switch location={item}>
               <Route path="/" exact component={HomePage}></Route>
               <Route path="/about" exact component={About}></Route>
               <Route path="/music" exact component={InstaPiano}></Route>
-            </switch>
+            </Switch>
           </animated.div>
         ))}
       </main>
