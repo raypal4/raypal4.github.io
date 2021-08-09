@@ -10,6 +10,17 @@
   --divider-color: #bdbdbd;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* Navbar CSS */
 .side-bar {
   position: fixed;
@@ -21,6 +32,7 @@
   color: black;
   padding: 6px 14px;
   transition: all 0.5s ease;
+  z-index: 99999;
 }
 
 .side-bar.active {
