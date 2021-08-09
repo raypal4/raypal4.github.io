@@ -54,7 +54,6 @@ class ThreeGrid extends Component {
                     alt="Coffee Boi"
                   />
                   <h4 className="grid-title">
-                    {" "}
                     <div className="jeader">
                       {this.props.title.split("").map((word, key) => (
                         <SqueezeSpring key={key}>{word}</SqueezeSpring>
@@ -77,7 +76,6 @@ class ThreeGrid extends Component {
                         alt="minions"
                       />
                       <h4 className="grid-title">
-                        {" "}
                         <div className="jeader">
                           {this.props.title2.split("").map((word, key) => (
                             <SqueezeSpring key={key}>{word}</SqueezeSpring>
@@ -97,7 +95,6 @@ class ThreeGrid extends Component {
                         alt="musicblob"
                       />
                       <h4 className="grid-title">
-                        {" "}
                         <div className="jeader">
                           {this.props.title3.split("").map((word, key) => (
                             <SqueezeSpring key={key}>{word}</SqueezeSpring>
