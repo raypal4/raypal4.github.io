@@ -1,10 +1,10 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import NavBar from "./components/navbar.jsx";
 import HomePage from "./pages/homepage.jsx";
 import About from "./pages/about.jsx";
 import InstaPiano from "./pages/instapiano.jsx";
 import { Route, useLocation } from "react-router-dom";
-import { __RouterContext, Switch } from "react-router";
+import { Switch } from "react-router";
 import { useTransition, animated } from "react-spring";
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
     enter: { x: 0, y: 0, opacity: 1 },
     // leave: { opacity: 0 },
     leave: (location) => async (next) => {
-      await next({ x: 0, opacity: 1 });
+      await next({ x: 0.1, opacity: 1 });
       await next({ x: 50 });
       await next({ width: "0%" });
       await next({ opacity: 0 });

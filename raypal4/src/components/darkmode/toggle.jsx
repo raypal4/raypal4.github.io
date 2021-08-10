@@ -4,7 +4,7 @@ import { func, string } from "prop-types";
 const Toggle = ({ theme, toggleTheme }) => {
   window.addEventListener("load", function () {
     //dom is fully loaded, but maybe waiting on images & css files
-    theme == "dark"
+    theme === "dark"
       ? (document.getElementById("switchCB").checked = true)
       : (document.getElementById("switchCB").checked = false);
   });

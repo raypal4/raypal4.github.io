@@ -13,7 +13,7 @@ class InstaComponent extends Component {
       filter: function (image) {
         if (image.type === "video") {
           count += 1;
-          if (count == 1) {
+          if (count === 1) {
             image.customTagOpen = '<div class="row">';
           }
           return true;

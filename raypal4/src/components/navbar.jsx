@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import M from "materialize-css";
 import "../app.css";
 import profilePic from "../assets/profile.jpg";
@@ -16,7 +16,7 @@ const NavBar = () => {
     sideBar.classList.toggle("active");
   };
 
-  const [theme, themeToggler, mountedComponent] = DarkMode();
+  const [theme, themeToggler] = DarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   const NavBarLinks = [
@@ -39,7 +39,7 @@ const NavBar = () => {
 
   document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".tooltipped");
-    var instances = M.Tooltip.init(elems);
+    M.Tooltip.init(elems);
   });
 
   return (
@@ -54,7 +54,7 @@ const NavBar = () => {
                   <img
                     className="responsive-img"
                     src={profilePic}
-                    alt="Profile Picture"
+                    alt="Profile"
                   ></img>
                 </div>
                 <div className="col s8">
