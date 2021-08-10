@@ -5,34 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useSpring, animated, to, useTransition } from "react-spring";
 
 class ThreeGrid extends Component {
-  constructor() {
-    super();
-    this.state = {
-      animate: true,
-    };
-  }
-
-  componentDidMount = () => {
-    this.state.animate = false;
-
-    if (window.sessionStorage.getItem("firstLoadDone") === null) {
-      this.setState({
-        animate: true,
-      });
-      window.sessionStorage.setItem("firstLoadDone", 1);
-    } else {
-      this.setState({ animate: false });
-    }
-  };
-
-  componentWillUnmount = () => {
-    this.state.animate = false;
-    window.sessionStorage.setItem("firstLoadDone", null);
-    console.log(this.state.animate);
-  };
-
   render() {
-    const presetdelay = 0;
+    const presetdelay = 500;
     const SqueezeSpring = ({ children }) => {
       const [state, toggle] = useState(false);
       const { x, y } = useSpring({
@@ -70,50 +44,36 @@ class ThreeGrid extends Component {
     const LeftIn = ({ children }) => {
       const loc = useLocation();
       const trans = useTransition(loc, {
-        from: { x: -100, y: 0, opacity: 1 },
+        from: { x: -100, y: 0, opacity: 0 },
         enter: { x: 0, y: 0, opacity: 1 },
         delay: presetdelay,
       });
-      return trans((style) =>
-        this.state.animate == false ? (
-          <animated.div style={style}>{children}</animated.div>
-        ) : (
-          (console.log(this.state.animate),
-          (<div style={style}>{children}NOOO</div>))
-        )
+      return trans((style, item) =>
+        item ? <animated.div style={style}>{children}</animated.div> : ""
       );
     };
 
     const RightIn = ({ children }) => {
       const loc = useLocation();
       const trans = useTransition(loc, {
-        from: { x: 100, y: 0, opacity: 1 },
+        from: { x: 100, y: 0, opacity: 0 },
         enter: { x: 0, y: 0, opacity: 1 },
         delay: presetdelay,
       });
-      return trans((style) =>
-        this.state.animate == false ? (
-          <animated.div style={style}>{children}</animated.div>
-        ) : (
-          (console.log(this.state.animate),
-          (<div style={style}>{children}NOOO</div>))
-        )
+      return trans((style, item) =>
+        item ? <animated.div style={style}>{children}</animated.div> : ""
       );
     };
 
     const BtmIn = ({ children }) => {
       const loc = useLocation();
       const trans = useTransition(loc, {
-        from: { x: 0, y: 800, opacity: 1 },
+        from: { x: 0, y: 800, opacity: 0 },
         enter: { x: 0, y: 0, opacity: 1 },
         delay: presetdelay,
       });
-      return trans((style) =>
-        this.state.animate == false
-          ? ((this.state.animate = true),
-            (<animated.div style={style}>{children}</animated.div>))
-          : (console.log(this.state.animate),
-            (<div style={style}>{children}NOOO</div>))
+      return trans((style, item) =>
+        item ? <animated.div style={style}>{children}</animated.div> : ""
       );
     };
 
