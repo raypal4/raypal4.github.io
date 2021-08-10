@@ -11,8 +11,10 @@ const App = () => {
   const location = useLocation();
 
   const transitions = useTransition(location, {
-    from: { x: 0, y: 0, width: "100%", opacity: 1 },
-    enter: { x: 0, y: 0, opacity: 1 },
+    from: { x: 0, y: 0, width: "100%", opacity: 0 },
+    enter: (location) => async (next) => {
+      await next({ opacity: 1 });
+    },
     // leave: { opacity: 0 },
     leave: (location) => async (next) => {
       await next({ x: 0, opacity: 1 });
