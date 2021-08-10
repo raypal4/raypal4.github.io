@@ -6,7 +6,7 @@ import { useSpring, animated, to, useTransition } from "react-spring";
 
 class ThreeGrid extends Component {
   render() {
-    const presetdelay = 0;
+    const presetdelay = 1000;
     const SqueezeSpring = ({ children }) => {
       const [state, toggle] = useState(false);
       const { x, y } = useSpring({
