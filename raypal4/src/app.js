@@ -11,10 +11,16 @@ const App = () => {
   const location = useLocation();
 
   const transitions = useTransition(location, {
-    from: { position: "absolute", opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    delay: 200,
+    from: { x: 0, y: 0, width: "100%", opacity: 1 },
+    enter: { x: 0, y: 0, opacity: 1 },
+    // leave: { opacity: 0 },
+    leave: (location) => async (next) => {
+      await next({ x: 0, opacity: 1 });
+      await next({ x: 50 });
+      await next({ width: "0%" });
+      await next({ opacity: 0 });
+    },
+    delay: 1000,
   });
 
   const menuButtonClickMain = () => {
@@ -40,7 +46,7 @@ const App = () => {
           <animated.div key={key} style={props}>
             <Switch location={item}>
               <Route path="/" exact component={HomePage}></Route>
-              {/* <Route path="/about" exact component={About}></Route> */}
+              <Route path="/about" exact component={About}></Route>
               <Route path="/music" exact component={InstaPiano}></Route>
             </Switch>
           </animated.div>
