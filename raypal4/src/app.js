@@ -11,13 +11,16 @@ const App = () => {
   const location = useLocation();
 
   const transitions = useTransition(location, {
-    enter: { x: 0, y: 0, width: "100%" },
-    leave: { opacity: 1 },
-    // leave: (location) => async (next) => {
-    //   await next({ x: -100 });
-    //   await next({ width: "0%" });
-    //   await next({ opacity: 0 });
-    // },
+    from: { x: 0, y: 0, width: "100%", opacity: 1 },
+    enter: { x: 0, y: 0, opacity: 1 },
+    // leave: { opacity: 0 },
+    leave: (location) => async (next) => {
+      await next({ x: 0, opacity: 1 });
+      await next({ x: 50 });
+      await next({ width: "0%" });
+      await next({ opacity: 0 });
+    },
+    delay: 1000,
   });
 
   const menuButtonClickMain = () => {
