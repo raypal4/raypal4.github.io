@@ -29,6 +29,7 @@ self.addEventListener("activate", function (event) {
       return Promise.all(
         cacheNames
           .filter(function (cacheName) {
+            return true;
             // Return true if you want to remove this cache,
             // but remember that caches are shared across
             // the whole origin
