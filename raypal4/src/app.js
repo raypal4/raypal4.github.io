@@ -11,7 +11,7 @@ const App = () => {
   const location = useLocation();
 
   const transitions = useTransition(location, {
-    from: { x: 0, y: 0, width: "100%", opacity: 1 },
+    from: { position: "absolute", x: 0, y: 0, width: "100%", opacity: 0 },
     enter: { x: 0, y: 0, opacity: 1 },
     // leave: { opacity: 0 },
     leave: (location) => async (next) => {
@@ -20,7 +20,6 @@ const App = () => {
       await next({ width: "0%" });
       await next({ opacity: 0 });
     },
-    delay: 1000,
   });
 
   const menuButtonClickMain = () => {
