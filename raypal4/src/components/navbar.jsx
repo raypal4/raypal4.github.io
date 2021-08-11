@@ -55,6 +55,8 @@ const NavBar = () => {
                     className="responsive-img"
                     src={profilePic}
                     alt="Profile"
+                    width="640"
+                    height="360"
                   ></img>
                 </div>
                 <div className="col s8">

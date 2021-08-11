@@ -18,7 +18,13 @@ class ThreeGrid extends Component {
             {[
               <Link to={this.props.link1}>
                 <div className="col s12 m7 l7 grid grid-1">
-                  <img className="page-logo" src={RT} alt="RT" />
+                  <img
+                    className="page-logo"
+                    src={RT}
+                    alt="RT"
+                    width="60"
+                    height="60"
+                  />
                   <div className="content-continer">
                     <img
                       className="grid-image"
