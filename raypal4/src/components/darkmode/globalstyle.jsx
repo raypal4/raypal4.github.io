@@ -57,4 +57,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
   
+  .inner-container{
+    background: ${({ theme }) => theme.body};
+  }
+  
   `;
