@@ -18,7 +18,7 @@ const App = () => {
     leave: (location) => async (next) => {
       await next({ x: 0.1, opacity: 1 });
       await next({ x: 50 });
-      await next({ width: "0%" });
+      await next({ width: "0%", x: 0.1 });
       await next({ opacity: 0 });
     },
   });
