@@ -13,7 +13,7 @@ self.addEventListener("fetch", function (event) {
 });
 
 self.addEventListener("install", function (event) {
-  // Perform install steps
+  // Perform install stepss
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       console.log("Opened cache");
@@ -29,6 +29,7 @@ self.addEventListener("activate", function (event) {
       return Promise.all(
         cacheNames
           .filter(function (cacheName) {
+            return true;
             // Return true if you want to remove this cache,
             // but remember that caches are shared across
             // the whole origin
