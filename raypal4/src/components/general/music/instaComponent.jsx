@@ -29,23 +29,25 @@ class InstaComponent extends Component {
 
   render() {
     return (
-      <div className="inner-container">
+      <React.Fragment>
         {[
-          <div id="instafeed">
-            <div className="row">
-              <div className="col s12 m12 l12">
-                <h1>Piano Covers ~</h1>
-                <p className="feed-subtitle">
-                  A mini component using instafeed.js to pull out instagram
-                  video feed. Pardon the latency, still trying to improve it.
-                </p>
+          <div className="inner-container">
+            <div id="instafeed">
+              <div className="row">
+                <div className="col s12 m12 l12">
+                  <h1>Piano Covers ~</h1>
+                  <p className="feed-subtitle">
+                    A mini component using instafeed.js to pull out instagram
+                    video feed. Pardon the latency, still trying to improve it.
+                  </p>
+                </div>
               </div>
             </div>
           </div>,
         ].map((div, key) => (
           <LeftIn key={key}>{div}</LeftIn>
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }

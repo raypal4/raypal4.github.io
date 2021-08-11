@@ -5,10 +5,15 @@
   overflow: hidden;
 }
 
-.feed-container .inner-container {
+#instafeed {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.feed-container .inner-container {
+  width: 100%;
+  min-height: 100vh;
 }
 
 .feed-subtitle {
