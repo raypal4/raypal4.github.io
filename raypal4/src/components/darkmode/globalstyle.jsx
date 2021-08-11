@@ -60,5 +60,9 @@ export const GlobalStyles = createGlobalStyle`
   .inner-container{
     background: ${({ theme }) => theme.body};
   }
+
+  .background-loader{
+    background: ${({ theme }) => theme.bb8};
+  }
   
   `;
