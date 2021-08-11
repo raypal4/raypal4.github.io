@@ -13,7 +13,7 @@ self.addEventListener("fetch", function (event) {
 });
 
 self.addEventListener("install", function (event) {
-  // Perform install steps
+  // Perform install stepss
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       console.log("Opened cache");
