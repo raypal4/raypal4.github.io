@@ -17,7 +17,7 @@ class ThreeGrid extends Component {
           <div className="row">
             {[
               <Link to={this.props.link1}>
-                <div className="col s12 m7 l7 grid grid-1">
+                <div className="col s12 m12 l7 grid grid-1">
                   <img
                     className="page-logo"
                     src={RT}
@@ -46,7 +46,7 @@ class ThreeGrid extends Component {
               <LeftIn key={key}>{div}</LeftIn>
             ))}
 
-            <div className="col s12 m5 l5">
+            <div className="col s12 m12 l5">
               <div className="row">
                 {[
                   <Link to={this.props.link2}>

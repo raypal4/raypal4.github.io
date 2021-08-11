@@ -32,6 +32,19 @@
   }
 }
 
+@media (min-width: 600px) {
+  .grid {
+    height: 600px !important;
+  }
+
+  .side-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 100px !important;
+  }
+}
+
 .grid {
   transition: all 0.5s ease;
   pointer-events: auto;
