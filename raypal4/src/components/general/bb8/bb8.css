@@ -123,6 +123,12 @@ body {
   z-index: 0;
 }
 
+@media screen and (max-width: 600px) {
+  .bb-8 {
+    left: 40%;
+  }
+}
+
 .bb-8__head {
   z-index: 4;
   position: absolute;
