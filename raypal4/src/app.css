@@ -210,6 +210,8 @@ body {
 .test {
   background-color: red;
   margin: 10px;
+  height: 200px;
+  width: 200px;
 }
 
 .section-body {
