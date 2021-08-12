@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { RightIn } from "../animations/animations.jsx";
 import "./parallaxSection.css";
 import { InView } from "react-intersection-observer";
@@ -6,42 +6,13 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Trail, animated } from "react-spring";
 
 const ParallaxSection = () => {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = { divHeight: 0 };
-  //   }
-
-  //   componentDidMount() {
-  //     const x = document.querySelector("#para-cont");
-  //     x.addEventListener("scroll", this.resizeHeaderOnScroll);
-  //     console.log(window);
-  //     console.log(this);
-  //   }
-
-  //   resizeHeaderOnScroll() {
-  //     // const x = document.querySelector("#para-cont");
-  //     // let scrollTop = x.scrollTop,
-  //     //   minHeight = 30,
-  //     //   newdivHeight = Math.max(minHeight, 200 - scrollTop);
-  //     console.log(ParallaxSection);
-
-  //     // this.setState({
-  //     //   divHeight: newdivHeight,
-  //     // });
-  //   }
-
-  const [scrollY, setScrollY] = useState(0);
+  const [divWidth, setdivWidth] = useState(200);
 
   useEffect(() => {
     const x = document.querySelector("#para-cont");
-
-    let scrollTop = x.scrollTop,
-      minHeight = 30,
-      newdivHeight = Math.max(minHeight, 200 - scrollTop);
-    const handleScroll = () => setScrollY(window.scrollY);
-    x.addEventListener("scroll", debounce(handleScroll));
-    return () => window.removeEventListener("scroll", debounce(handleScroll));
-  }, [debounce]);
+    const handleScroll = () => setdivWidth(Math.max(30, 200 - x.scrollTop));
+    x.addEventListener("scroll", handleScroll);
+  });
 
   return (
     <React.Fragment>
@@ -59,7 +30,10 @@ const ParallaxSection = () => {
               sticky={{ start: 0, end: 1 }}
             >
               <h1>About</h1>
-              <div id="box" className="test" style={{ height: 10 }}></div>
+              <animated.div
+                className="test"
+                style={{ height: 200, width: divWidth }}
+              ></animated.div>
             </ParallaxLayer>
 
             <ParallaxLayer offset={1} />
