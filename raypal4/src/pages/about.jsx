@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import ParallaxSection from "../components/general/parallaxSection/parallaxSection.jsx";
 
 class about extends Component {
   state = {};
   render() {
-    return <h1>About</h1>;
+    return (
+      <React.Fragment>
+        <ParallaxSection />
+      </React.Fragment>
+    );
   }
 }
 

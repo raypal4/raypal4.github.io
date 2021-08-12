@@ -56,13 +56,13 @@ export const GlobalStyles = createGlobalStyle`
   #instafeed .card-content p {
     color: ${({ theme }) => theme.text};
   }
-  
-  .inner-container{
-    background: ${({ theme }) => theme.body};
-  }
 
   .background-loader{
     background: ${({ theme }) => theme.bb8};
+  }
+  
+  .section-body{
+    background: ${({ theme }) => theme.body};
   }
   
   `;
