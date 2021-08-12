@@ -3,17 +3,19 @@ import { RightIn } from "../animations/animations.jsx";
 import "./parallaxSection.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated, useSpring } from "react-spring";
+import foreground from "./bush.svg";
+import sunset from "./sunset.jpg";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
 
   useEffect(() => {
     const x = document.querySelector("#para-cont");
-    const handleScroll = () => setdivScale(Math.max(1, 0 + x.scrollTop / 400));
+    const handleScroll = () => setdivScale(Math.max(1, 1 + x.scrollTop / 700));
     x.addEventListener("scroll", handleScroll);
   });
 
-  const props = useSpring({
+  const backgroundScale = useSpring({
     to: { scale: divScale },
     from: { scale: 1 },
   });
@@ -34,8 +36,24 @@ const ParallaxSection = () => {
               }}
               sticky={{ start: 0, end: 1 }}
             >
-              <h1>About</h1>
-              <animated.div className="test" style={props}></animated.div>
+              {/* <h1>About</h1>
+              <animated.div
+                className="test"
+                style={backgroundScale}
+              ></animated.div> */}
+              <div className="cover-container">
+                <animated.div
+                  className="cover-background"
+                  style={{ backgroundScale }}
+                ></animated.div>
+                <animated.div
+                  className="cover-foreground"
+                  style={{
+                    backgroundScale,
+                    backgroundImage: `url(${foreground})`,
+                  }}
+                ></animated.div>
+              </div>
             </ParallaxLayer>
 
             <ParallaxLayer offset={1} />

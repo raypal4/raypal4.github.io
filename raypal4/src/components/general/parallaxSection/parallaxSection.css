@@ -1,0 +1,21 @@
+.cover-container {
+  width: 100%;
+  height: 100%;
+}
+
+.cover-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cover-foreground {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
