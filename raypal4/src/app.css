@@ -208,11 +208,10 @@ body {
 }
 
 .test {
-  /* background-color: red; */
   margin: 10px;
   height: 100%;
   width: 100%;
-  background-repeat: no-repeat;
+  background-color: red;
 }
 
 .section-body {

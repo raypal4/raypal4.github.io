@@ -52,9 +52,16 @@ const ParallaxSection = () => {
     config: { duration: 100 },
   });
 
+  const drawLine = useSpring({
+    to: {
+      height: reverser(divScale * 2, 280, 30),
+      opacity: 1 - reverser(divScale, 180, 1) / 150,
+    },
+  });
+
   return (
     <React.Fragment>
-      {reverser(divScale, 100, 40)}
+      {divScale}
       {[
         <div className="section-body">
           <Parallax pages={4} style={{ top: "0", left: "0" }} id="para-cont">
@@ -65,6 +72,7 @@ const ParallaxSection = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                backgroundColor: "black",
               }}
               sticky={{ start: 0, end: 2 }}
             >
@@ -78,7 +86,7 @@ const ParallaxSection = () => {
                   style={foregroundAnim}
                 ></animated.div>
                 <animated.div className="cover-title" style={covertitleAnim}>
-                  <h1>ABOUT ME</h1>
+                  <h1>ABOUT</h1>
                   <div class="icon-scroll"></div>
                 </animated.div>
                 <animated.div className="cover-title" style={subtitleAnim}>
@@ -93,6 +101,12 @@ const ParallaxSection = () => {
                     </p>
                   </div>
                 </animated.div>
+                <div>
+                  <animated.div
+                    className="moving-line"
+                    style={drawLine}
+                  ></animated.div>
+                </div>
               </div>
             </ParallaxLayer>
 
