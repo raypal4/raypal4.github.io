@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Instafeed from "instafeed.js";
 import "./instaComponent.css";
-import { LeftIn } from "../animations/animations.jsx";
+import { RightIn } from "../animations/animations.jsx";
 class InstaComponent extends Component {
   componentDidMount() {
     var count = 0;
@@ -31,7 +31,7 @@ class InstaComponent extends Component {
     return (
       <React.Fragment>
         {[
-          <div className="inner-container">
+          <div className="section-body">
             <div id="instafeed">
               <div className="row">
                 <div className="col s12 m12 l12">
@@ -45,7 +45,7 @@ class InstaComponent extends Component {
             </div>
           </div>,
         ].map((div, key) => (
-          <LeftIn key={key}>{div}</LeftIn>
+          <RightIn key={key}>{div}</RightIn>
         ))}
       </React.Fragment>
     );

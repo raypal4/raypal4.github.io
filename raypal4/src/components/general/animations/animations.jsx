@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useSpring, animated, to, useTransition } from "react-spring";
 
-const presetdelay = 4000;
+const presetdelay = 2200;
 
 export const SqueezeSpring = ({ children }) => {
   const [state, toggle] = useState(false);

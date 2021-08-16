@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Color Pallet */
 :root {
   --dark-primary-color: #0e1d28;
@@ -208,10 +212,18 @@ body {
 }
 
 .test {
-  width: 200px;
-  height: 200px;
-  background-color: red;
   margin: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}
+
+.section-body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding-left: 10px;
 }
 
 /* background BB8 Loader */
