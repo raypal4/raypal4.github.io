@@ -30,24 +30,31 @@ const ParallaxSection = () => {
     config: { duration: 100 },
   });
 
+  function reverser(input, valuetoreverse, reversehowmuch) {
+    if (input < valuetoreverse) {
+      return input;
+    } else {
+      return valuetoreverse - (input - valuetoreverse + reversehowmuch);
+    }
+  }
+
   const covertitleAnim = useSpring({
     to: {
       opacity: 1 - divScale / 40,
-      backgroundSize: 100 + divScale / 10 + "%",
     },
     config: { duration: 100 },
   });
 
   const subtitleAnim = useSpring({
     to: {
-      opacity: 0 + divScale / 150,
-      backgroundSize: 100 + divScale / 10 + "%",
+      opacity: 0 + reverser(divScale, 100, 40) / 100,
     },
     config: { duration: 100 },
   });
 
   return (
     <React.Fragment>
+      {reverser(divScale, 100, 40)}
       {[
         <div className="section-body">
           <Parallax pages={4} style={{ top: "0", left: "0" }} id="para-cont">
