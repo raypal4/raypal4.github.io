@@ -63,7 +63,7 @@ const ParallaxSection = () => {
     <React.Fragment>
       {[
         <div className="section-body">
-          <Parallax pages={4} style={{ top: "0", left: "0" }} id="para-cont">
+          <Parallax pages={5} style={{ top: "0", left: "0" }} id="para-cont">
             <ParallaxLayer
               offset={0}
               speed={1}
@@ -79,11 +79,13 @@ const ParallaxSection = () => {
                 <animated.div
                   className="cover-background"
                   style={backgroundAnim}
-                ></animated.div>
-                <animated.div
-                  className="cover-foreground"
-                  style={foregroundAnim}
-                ></animated.div>
+                >
+                  <animated.div
+                    className="cover-foreground"
+                    style={foregroundAnim}
+                  ></animated.div>
+                </animated.div>
+
                 <animated.div className="cover-title" style={covertitleAnim}>
                   <h1>ABOUT</h1>
                   <div class="icon-scroll"></div>
@@ -114,21 +116,32 @@ const ParallaxSection = () => {
 
             <ParallaxLayer
               offset={3}
-              speed={4}
-              style={{ backgroundColor: "#ff6d6d" }}
-            />
-
-            <ParallaxLayer
-              offset={3}
-              speed={0.5}
+              speed={0.1}
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 color: "white",
+                transition: "all 0.5s ease",
+                backgroundColor: "#ff6d6d",
               }}
             >
               <h1>WOI</h1>
+            </ParallaxLayer>
+
+            <ParallaxLayer
+              offset={4}
+              speed={0.1}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "white",
+                transition: "all 0.5s ease",
+                backgroundColor: "green",
+              }}
+            >
+              <h1>WOI 2</h1>
             </ParallaxLayer>
           </Parallax>
         </div>,
