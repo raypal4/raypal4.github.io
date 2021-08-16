@@ -1,6 +1,11 @@
 #para-cont {
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
+  transition: all 3s ease-in-out;
+}
+
+#para-cont::-webkit-scrollbar {
+  display: none;
 }
 
 .cover-container {

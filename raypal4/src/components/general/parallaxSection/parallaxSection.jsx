@@ -61,7 +61,6 @@ const ParallaxSection = () => {
 
   return (
     <React.Fragment>
-      {divScale}
       {[
         <div className="section-body">
           <Parallax pages={4} style={{ top: "0", left: "0" }} id="para-cont">
