@@ -63,6 +63,5 @@ export const GlobalStyles = createGlobalStyle`
   
   .section-body{
     background: ${({ theme }) => theme.body};
-  }
-  
+  } 
   `;
