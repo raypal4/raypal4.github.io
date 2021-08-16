@@ -11,18 +11,17 @@ const ParallaxSection = () => {
 
   useEffect(() => {
     const x = document.querySelector("#para-cont");
-    const handleScroll = () => setdivScale(Math.max(1, 1 + x.scrollTop / 700));
+    const handleScroll = () => setdivScale(x.scrollTop / 5);
     x.addEventListener("scroll", handleScroll);
   });
 
-  const backgroundScale = useSpring({
-    to: { scale: divScale },
-    from: { scale: 1 },
+  const foregroundScale = useSpring({
+    to: { backgroundSize: 100 + divScale + "%" },
+    from: { backgroundImage: `url(${foreground})` },
   });
 
   return (
     <React.Fragment>
-      {divScale}
       {[
         <div className="section-body">
           <Parallax pages={3} style={{ top: "0", left: "0" }} id="para-cont">
@@ -36,22 +35,14 @@ const ParallaxSection = () => {
               }}
               sticky={{ start: 0, end: 1 }}
             >
-              {/* <h1>About</h1>
-              <animated.div
-                className="test"
-                style={backgroundScale}
-              ></animated.div> */}
               <div className="cover-container">
                 <animated.div
                   className="cover-background"
-                  style={{ backgroundScale }}
+                  style={{ backgroundImage: `url(${sunset})` }}
                 ></animated.div>
                 <animated.div
                   className="cover-foreground"
-                  style={{
-                    backgroundScale,
-                    backgroundImage: `url(${foreground})`,
-                  }}
+                  style={foregroundScale}
                 ></animated.div>
               </div>
             </ParallaxLayer>
