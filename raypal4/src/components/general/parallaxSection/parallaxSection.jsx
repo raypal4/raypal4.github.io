@@ -88,7 +88,7 @@ const ParallaxSection = () => {
 
                 <animated.div className="cover-title" style={covertitleAnim}>
                   <h1>ABOUT</h1>
-                  <div class="icon-scroll"></div>
+                  <div className="icon-scroll"></div>
                 </animated.div>
                 <animated.div className="cover-title" style={subtitleAnim}>
                   <div className="sub">
