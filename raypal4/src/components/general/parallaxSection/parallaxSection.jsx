@@ -1,17 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { RightIn } from "../animations/animations.jsx";
 import "./parallaxSection.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated, useSpring } from "react-spring";
+
 import bush from "./bush.svg";
 import sunset from "./blue-background.jpg";
+import pythonlogo from "./logos/python.svg";
+import javalogo from "./logos/java.svg";
+import cpplogo from "./logos/cpp.svg";
+import kotlinlogo from "./logos/kotlin.svg";
+import webtechlogo from "./logos/webTech.svg";
+import wplogo from "./logos/wordpress.svg";
+import mongologo from "./logos/MongoDB.svg";
+
+import nodelogo from "./logos/nodejs.svg";
+import reactlogo from "./logos/react.svg";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
+  let paraContainer = useRef(null);
 
   useEffect(() => {
+    const handleScroll = () =>
+      paraContainer != null ? setdivScale(paraContainer.current / 10) : void 0;
+
+    //Workaround for binding event listener to the react spring parralax library
     const x = document.querySelector("#para-cont");
-    const handleScroll = () => setdivScale(x.scrollTop / 10);
     x.addEventListener("scroll", handleScroll);
   });
 
@@ -63,7 +78,14 @@ const ParallaxSection = () => {
     <React.Fragment>
       {[
         <div className="section-body">
-          <Parallax pages={5} style={{ top: "0", left: "0" }} id="para-cont">
+          <Parallax
+            pages={5}
+            style={{ top: "0", left: "0" }}
+            id="para-cont"
+            ref={(el) => {
+              paraContainer = el;
+            }}
+          >
             <ParallaxLayer
               offset={0}
               speed={1}
@@ -118,19 +140,90 @@ const ParallaxSection = () => {
               offset={3}
               speed={0.1}
               style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 color: "white",
                 transition: "all 0.5s ease",
-                backgroundColor: "#ff6d6d",
+                backgroundColor: "black",
+                height: "auto",
               }}
             >
-              <h1>WOI</h1>
+              <div className="row content-grid">
+                <h1>stuff</h1>
+
+                <div className="col s6 m3 l3 center">
+                  <img
+                    className="grid-image"
+                    alt="python logo"
+                    src={pythonlogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Python</h5>
+                  </div>
+                </div>
+                <div className="col s6 m3 l3 center">
+                  <img
+                    className="grid-image"
+                    alt="java logo"
+                    src={javalogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Java</h5>
+                  </div>
+                </div>
+                <div className="col s6 m3 l3 center">
+                  <img
+                    className="grid-image"
+                    alt="cpp logo"
+                    src={cpplogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>C++</h5>
+                  </div>
+                </div>
+                <div className="col s6 m3 l3 center">
+                  <img
+                    className="grid-image"
+                    alt="kotlin logo"
+                    src={kotlinlogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Kotlin</h5>
+                  </div>
+                </div>
+                <div className="col s12 m4 l4 center">
+                  <img
+                    className="grid-image"
+                    alt="web technologies"
+                    src={webtechlogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Web Technologies</h5>
+                  </div>
+                </div>
+                <div className="col s6 m4 l4 center">
+                  <img
+                    className="grid-image"
+                    alt="wordpress"
+                    src={wplogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Wordpress</h5>
+                  </div>
+                </div>
+                <div className="col s6 m4 l4 center">
+                  <img
+                    className="grid-image"
+                    alt="mongodb logo"
+                    src={mongologo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>MongoDB</h5>
+                  </div>
+                </div>
+              </div>
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4}
+              offset={4.3}
               speed={0.1}
               style={{
                 display: "flex",
