@@ -4,7 +4,7 @@ import "./parallaxSection.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated, useSpring } from "react-spring";
 
-import bush from "./bush.svg";
+import bush from "./bush.png";
 import sunset from "./blue-background.jpg";
 import pythonlogo from "./logos/python.svg";
 import javalogo from "./logos/java.svg";
@@ -30,8 +30,24 @@ const ParallaxSection = () => {
     x.addEventListener("scroll", handleScroll);
   });
 
+  function reverser(input, valuetoreverse, reversehowmuch) {
+    if (input < valuetoreverse) {
+      return input;
+    } else if (valuetoreverse - (input - valuetoreverse + reversehowmuch) < 0) {
+      return 0;
+    } else {
+      return valuetoreverse - (input - valuetoreverse + reversehowmuch);
+    }
+  }
+
   const foregroundAnim = useSpring({
-    to: { backgroundSize: 100 + divScale + "%" },
+    transform:
+      "scale3d(" +
+      reverser(1 + divScale / 100, 2, 1) +
+      "," +
+      reverser(1 + divScale / 100, 2, 1) +
+      ",1)",
+    opacity: 2 - divScale / 40,
     from: { backgroundImage: `url(${bush})` },
     config: { duration: 100 },
   });
@@ -39,19 +55,16 @@ const ParallaxSection = () => {
   const backgroundAnim = useSpring({
     to: {
       opacity: 2 - divScale / 40,
-      backgroundSize: 100 + divScale / 10 + "%",
+      transform:
+        "scale3d(" +
+        reverser(1 + divScale / 150, 2, 1) +
+        "," +
+        reverser(1 + divScale / 150, 2, 1) +
+        ",1)",
     },
     from: { backgroundImage: `url(${sunset})` },
     config: { duration: 100 },
   });
-
-  function reverser(input, valuetoreverse, reversehowmuch) {
-    if (input < valuetoreverse) {
-      return input;
-    } else {
-      return valuetoreverse - (input - valuetoreverse + reversehowmuch);
-    }
-  }
 
   const covertitleAnim = useSpring({
     to: {
@@ -79,7 +92,7 @@ const ParallaxSection = () => {
       {[
         <div className="section-body">
           <Parallax
-            pages={5}
+            pages={6}
             style={{ top: "0", left: "0" }}
             id="para-cont"
             ref={(el) => {
@@ -101,12 +114,11 @@ const ParallaxSection = () => {
                 <animated.div
                   className="cover-background"
                   style={backgroundAnim}
-                >
-                  <animated.div
-                    className="cover-foreground"
-                    style={foregroundAnim}
-                  ></animated.div>
-                </animated.div>
+                ></animated.div>
+                <animated.div
+                  className="cover-foreground"
+                  style={foregroundAnim}
+                ></animated.div>
 
                 <animated.div className="cover-title" style={covertitleAnim}>
                   <h1>ABOUT</h1>
@@ -141,17 +153,17 @@ const ParallaxSection = () => {
               speed={0.1}
               style={{
                 color: "white",
-                transition: "all 0.5s ease",
-                backgroundColor: "black",
-                height: "auto",
+                transition: "all 0.1s ease",
+                backgroundColor: "grey",
               }}
+              factor={2}
             >
               <div className="row content-grid">
                 <h1>stuff</h1>
 
-                <div className="col s6 m3 l3 center">
+                <div className="col s4 m3 l3">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="python logo"
                     src={pythonlogo}
                   ></img>
@@ -159,9 +171,9 @@ const ParallaxSection = () => {
                     <h5>Python</h5>
                   </div>
                 </div>
-                <div className="col s6 m3 l3 center">
+                <div className="col s4 m3 l3">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="java logo"
                     src={javalogo}
                   ></img>
@@ -169,9 +181,9 @@ const ParallaxSection = () => {
                     <h5>Java</h5>
                   </div>
                 </div>
-                <div className="col s6 m3 l3 center">
+                <div className="col s4 m3 l3">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="cpp logo"
                     src={cpplogo}
                   ></img>
@@ -179,9 +191,9 @@ const ParallaxSection = () => {
                     <h5>C++</h5>
                   </div>
                 </div>
-                <div className="col s6 m3 l3 center">
+                <div className="col s6 m3 l3">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="kotlin logo"
                     src={kotlinlogo}
                   ></img>
@@ -189,9 +201,9 @@ const ParallaxSection = () => {
                     <h5>Kotlin</h5>
                   </div>
                 </div>
-                <div className="col s12 m4 l4 center">
+                <div className="col s6 m4 l4">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="web technologies"
                     src={webtechlogo}
                   ></img>
@@ -199,9 +211,9 @@ const ParallaxSection = () => {
                     <h5>Web Technologies</h5>
                   </div>
                 </div>
-                <div className="col s6 m4 l4 center">
+                <div className="col s6 m4 l4">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="wordpress"
                     src={wplogo}
                   ></img>
@@ -209,9 +221,9 @@ const ParallaxSection = () => {
                     <h5>Wordpress</h5>
                   </div>
                 </div>
-                <div className="col s6 m4 l4 center">
+                <div className="col s6 m4 l4">
                   <img
-                    className="grid-image"
+                    className="grid-image-para"
                     alt="mongodb logo"
                     src={mongologo}
                   ></img>
@@ -222,17 +234,17 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            <ParallaxLayer offset={4} />
+
             <ParallaxLayer
-              offset={4.3}
-              speed={0.1}
+              offset={4.7}
+              speed={0}
               style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 color: "white",
-                transition: "all 0.5s ease",
+                transition: "all 0.1s ease",
                 backgroundColor: "green",
               }}
+              factor={1.5}
             >
               <h1>WOI 2</h1>
             </ParallaxLayer>

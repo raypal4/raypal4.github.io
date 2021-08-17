@@ -69,17 +69,20 @@
 .content-grid .col {
   position: relative;
   border: 1px solid hsla(0, 0%, 100%, 0.2);
-  height: 250px;
+  height: 50vh;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.content-grid .col .grid-image:hover {
-  transform: scale(1.2);
+.content-grid .col .grid-image-para:hover {
+  /* transform: scale(1.2); */
 }
 
-.content-grid .grid-image {
+.content-grid .grid-image-para {
+  position: relative;
   height: 100px;
-  width: auto;
   transition: all 0.2s ease-in-out;
+  top: 20%;
 }
 
 .content-grid .text-cont {
@@ -90,21 +93,32 @@
 
 @media screen and (max-width: 600px) {
   .cover-background {
-    height: 150px;
+    height: 100vh;
     background-position: 50% 0%;
   }
   .cover-foreground {
     background-position: 50% 0%;
+  }
+
+  .cover-title .sub {
+    width: 80% !important;
   }
 }
 
 @media (max-width: 1000px) {
   .cover-background {
-    height: 400px;
+    height: 100vh;
     background-position: 50% 0%;
   }
   .cover-foreground {
     background-position: 50% 0%;
+  }
+  .cover-title .sub {
+    width: 50%;
+  }
+
+  .content-grid .grid-image-para {
+    height: 80px;
   }
 }
 

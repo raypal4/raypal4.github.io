@@ -42,10 +42,10 @@ const App = () => {
         className="content-container"
         onClick={menuButtonClickMain.bind(this)}
       >
-        <div className="background-loader">
+        {/* <div className="background-loader">
           <BB8 />
           <div className="sand" />
-        </div>
+        </div> */}
         {transitions((props, item, key) => (
           <animated.div key={key} style={props}>
             <Switch location={item}>
