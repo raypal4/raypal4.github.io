@@ -12,6 +12,7 @@ import cms from "./illustrations/cms.svg";
 import webdev from "./illustrations/web-dev.svg";
 import elements from "./illustrations/elements.svg";
 import cool from "./illustrations/cool.svg";
+import soil from "./illustrations/soil.svg";
 
 import pythonlogo from "./logos/python.svg";
 import javalogo from "./logos/java.svg";
@@ -106,11 +107,22 @@ const ParallaxSection = () => {
             }}
           >
             <ParallaxLayer
+              offset={1.8}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={1.8}
+            ></ParallaxLayer>
+
+            <ParallaxLayer
               offset={2}
-              speed={0.1}
+              speed={0.3}
               className="no-show-mobile"
               style={{
-                transition: "all 5s ease",
+                transition: "all 1s ease",
               }}
             >
               <img
@@ -389,7 +401,8 @@ const ParallaxSection = () => {
                 color: "white",
                 transition: "all 0.1s ease",
                 backgroundImage: `url(${webdev})`,
-                backgroundSize: "auto 400px",
+                backgroundSize: "auto 300px",
+                backgroundColor: "white",
               }}
               className="div-background para-mobile-fix"
             ></ParallaxLayer>
