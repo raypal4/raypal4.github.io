@@ -75,16 +75,17 @@ const ParallaxSection = () => {
 
   const subtitleAnim = useSpring({
     to: {
-      opacity: 0 + reverser(divScale, 100, 40) / 100,
+      opacity: 0 + reverser(divScale, 100, 10) / 100,
     },
     config: { duration: 100 },
   });
 
   const drawLine = useSpring({
     to: {
-      height: reverser(divScale * 2, 280, 30),
-      opacity: 1 - reverser(divScale, 180, 1) / 150,
+      height: reverser(divScale, 130, 30) / 3 + "%",
+      opacity: 1 - reverser(divScale, 180, 1) / 200,
     },
+    delay: 100,
   });
 
   return (
@@ -136,17 +137,12 @@ const ParallaxSection = () => {
                     </p>
                   </div>
                 </animated.div>
-                <div>
-                  <animated.div
-                    className="moving-line"
-                    style={drawLine}
-                  ></animated.div>
-                </div>
+                <animated.div
+                  className="moving-line"
+                  style={drawLine}
+                ></animated.div>
               </div>
             </ParallaxLayer>
-
-            <ParallaxLayer offset={1} />
-            <ParallaxLayer offset={2} />
 
             <ParallaxLayer
               offset={3}
@@ -154,9 +150,9 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "grey",
+                backgroundColor: "black",
               }}
-              factor={2}
+              factor={1.8}
             >
               <div className="row content-grid">
                 <h1>stuff</h1>
@@ -208,7 +204,7 @@ const ParallaxSection = () => {
                     src={webtechlogo}
                   ></img>
                   <div className="text-cont">
-                    <h5>Web Technologies</h5>
+                    <h5>Web Techs</h5>
                   </div>
                 </div>
                 <div className="col s6 m4 l4">
@@ -234,17 +230,15 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
-            <ParallaxLayer offset={4} />
-
             <ParallaxLayer
-              offset={4.7}
+              offset={4.8}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "green",
+                backgroundColor: "black",
               }}
-              factor={1.5}
+              factor={1.8}
             >
               <h1>WOI 2</h1>
             </ParallaxLayer>
