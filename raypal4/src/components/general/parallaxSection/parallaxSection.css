@@ -77,10 +77,6 @@
   vertical-align: middle;
 }
 
-.content-grid .col .grid-image-para:hover {
-  /* transform: scale(1.2); */
-}
-
 .content-grid .grid-image-para {
   position: relative;
   height: 100px;
@@ -96,6 +92,17 @@
   position: absolute;
   left: 20px;
   bottom: 20px;
+}
+
+.end-para {
+  margin-top: 130px;
+  height: 100%;
+  width: 100%;
+}
+
+.div-background {
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
 }
 
 @media screen and (max-width: 600px) {
@@ -116,6 +123,14 @@
   }
   .para-mobile-fix {
     margin-top: 350px;
+  }
+
+  .end-para {
+    margin-top: 0px;
+  }
+
+  .no-show-mobile {
+    display: none;
   }
 }
 

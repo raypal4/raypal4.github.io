@@ -9,6 +9,9 @@ import sunset from "./illustrations/blue-background.jpg";
 import map from "./illustrations/map.svg";
 import chip from "./illustrations/chip.svg";
 import cms from "./illustrations/cms.svg";
+import webdev from "./illustrations/web-dev.svg";
+import elements from "./illustrations/elements.svg";
+import cool from "./illustrations/cool.svg";
 
 import pythonlogo from "./logos/python.svg";
 import javalogo from "./logos/java.svg";
@@ -17,7 +20,6 @@ import kotlinlogo from "./logos/kotlin.svg";
 import webtechlogo from "./logos/webTech.svg";
 import wplogo from "./logos/wordpress.svg";
 import mongologo from "./logos/MongoDB.svg";
-
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
 
@@ -97,19 +99,36 @@ const ParallaxSection = () => {
       {[
         <div className="section-body">
           <Parallax
-            pages={6}
+            pages={7}
             id="para-cont"
             ref={(el) => {
               paraContainer = el;
             }}
           >
             <ParallaxLayer
+              offset={2}
+              speed={0.1}
+              className="no-show-mobile"
+              style={{
+                transition: "all 5s ease",
+              }}
+            >
+              <img
+                src={cool}
+                style={{
+                  display: "block",
+                  width: "20%",
+                  marginLeft: "75%",
+                }}
+              />
+            </ParallaxLayer>
+
+            <ParallaxLayer
               offset={0}
               speed={0}
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "black",
               }}
               sticky={{ start: 0, end: 2 }}
             >
@@ -148,16 +167,33 @@ const ParallaxSection = () => {
 
             <ParallaxLayer
               offset={3}
+              speed={0.1}
+              className="no-show-mobile"
+              style={{
+                transition: "all 0.5s ease",
+              }}
+            >
+              <img
+                src={elements}
+                style={{
+                  display: "block",
+                  width: "20%",
+                  marginLeft: "5%",
+                }}
+              />
+            </ParallaxLayer>
+
+            <ParallaxLayer
+              offset={3}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "blue",
               }}
-              factor={2}
+              factor={1.8}
             >
               <div className="row content-grid">
-                <h1 className="center">Stack</h1>
+                <h1 className="center">Stack and Projects</h1>
 
                 <div className="col s6 m6 l3">
                   <div className="cube">
@@ -178,13 +214,13 @@ const ParallaxSection = () => {
                         src={map}
                       ></img>
                       <p>
-                        Punggol Mapper: A Data Structure and Algorithms School
-                        Project
+                        Punggol Mapper: A Data Structure and Algorithms Project
                       </p>
                       <a
                         className="waves-effect waves-light btn red"
                         href="https://www.youtube.com/watch?v=fm8bxLQ7bkY"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <i className="material-icons left">play_arrow</i>Video
                       </a>
@@ -227,6 +263,7 @@ const ParallaxSection = () => {
                         className="waves-effect waves-light btn red"
                         href="https://www.youtube.com/watch?v=eNc1Cjdc7rY"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <i className="material-icons left">play_arrow</i>Video
                       </a>
@@ -253,11 +290,12 @@ const ParallaxSection = () => {
                         alt="map"
                         src={map}
                       ></img>
-                      <p>WHALK: An Android Mobile Development School Project</p>
+                      <p>WHALK: An Android Mobile Development Project</p>
                       <a
                         className="waves-effect waves-light btn red"
                         href="https://www.youtube.com/watch?v=DJ_jqPybkhw"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <i className="material-icons left">play_arrow</i>Video
                       </a>
@@ -300,8 +338,9 @@ const ParallaxSection = () => {
                         className="waves-effect waves-light btn green"
                         href="https://scout.betterworld.sg/"
                         target="_blank"
+                        rel="noreferrer"
                       >
-                        <i className="material-icons left">play_arrow</i>Visit
+                        <i className="material-icons left">location_on</i>Visit
                         Site!
                       </a>
                     </div>
@@ -318,33 +357,55 @@ const ParallaxSection = () => {
                     <h5>React</h5>
                   </div>
                 </div>
+
+                <div className="col s6 m6 l6">
+                  <img
+                    className="grid-image-para"
+                    alt="node logo"
+                    src={nodelogo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>Node.js</h5>
+                  </div>
+                </div>
+
+                <div className="col s6 m6 l6">
+                  <img
+                    className="grid-image-para"
+                    alt="mongo logo"
+                    src={mongologo}
+                  ></img>
+                  <div className="text-cont">
+                    <h5>MongoDB</h5>
+                  </div>
+                </div>
               </div>
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.2}
+              offset={4.5}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "green",
+                backgroundImage: `url(${webdev})`,
+                backgroundSize: "auto 400px",
               }}
-              className="para-mobile-fix"
-            >
-              <h1>WOI 2</h1>
-            </ParallaxLayer>
+              className="div-background para-mobile-fix"
+            ></ParallaxLayer>
 
             <ParallaxLayer
-              offset={5.2}
+              offset={5.6}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "red",
               }}
               className="para-mobile-fix"
             >
-              <h1>WOI 3</h1>
+              <div className="end-para">
+                <p className="center-align">Made with love</p>
+              </div>
             </ParallaxLayer>
           </Parallax>
         </div>,
