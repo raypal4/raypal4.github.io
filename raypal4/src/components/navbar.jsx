@@ -31,7 +31,7 @@ const NavBar = () => {
       icon: "person",
     },
     {
-      title: "My Music",
+      title: "Music",
       link: "/music",
       icon: "music_video",
     },

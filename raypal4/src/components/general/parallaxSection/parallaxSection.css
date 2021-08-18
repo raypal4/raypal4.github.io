@@ -1,7 +1,11 @@
 #para-cont {
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
-  transition: all 3s ease-in-out;
+  /* transition: all 3s ease-in-out; */
+  background-color: black;
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #para-cont::-webkit-scrollbar {
@@ -25,7 +29,6 @@
 .cover-title {
   position: absolute;
   width: 100%;
-  height: calc(100vh);
   text-align: center;
   top: 40%;
   color: white;
@@ -42,11 +45,10 @@
   position: absolute;
   right: auto;
   left: 50%;
-  top: 70%;
-  width: 1px;
+  top: 62%;
+  width: 2px;
   max-height: 500px;
-  background-color: white;
-  opacity: 0.5;
+  background-color: hsla(0, 0%, 100%, 0.4);
   overflow: hidden;
 }
 
@@ -59,23 +61,93 @@
   background-position: 50% 50%;
 }
 
+.content-grid {
+  margin: 0px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+}
+
+.content-grid .col {
+  position: relative;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  height: 40vh;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.content-grid .grid-image-para {
+  position: relative;
+  height: 100px;
+  transition: all 0.2s ease-in-out;
+  top: 20%;
+}
+
+.content-grid .grid-image-inside {
+  width: 70px;
+}
+
+.content-grid .text-cont {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.end-para {
+  margin-top: 130px;
+  height: 100%;
+  width: 100%;
+}
+
+.div-background {
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+}
+
 @media screen and (max-width: 600px) {
   .cover-background {
-    height: 150px;
+    height: 100vh;
     background-position: 50% 0%;
   }
   .cover-foreground {
     background-position: 50% 0%;
+  }
+
+  .cover-title .sub {
+    width: 80% !important;
+  }
+
+  .content-grid {
+    top: 0%;
+  }
+  .para-mobile-fix {
+    margin-top: 350px;
+  }
+
+  .end-para {
+    margin-top: 0px;
+  }
+
+  .no-show-mobile {
+    display: none;
   }
 }
 
 @media (max-width: 1000px) {
   .cover-background {
-    height: 400px;
+    height: 100vh;
     background-position: 50% 0%;
   }
   .cover-foreground {
     background-position: 50% 0%;
+  }
+  .cover-title .sub {
+    width: 50%;
+  }
+
+  .content-grid .grid-image-para {
+    height: 80px;
   }
 }
 
@@ -89,7 +161,7 @@
   width: 25px;
   height: 40px;
   margin-left: -12px;
-  top: 50%;
+  bottom: -100%;
   margin-top: -35px;
   box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
@@ -126,4 +198,33 @@
     opacity: 0;
     transform: translateY(46px);
   }
+}
+
+.cube {
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.33s;
+  transition: transform 0.33s; /* Animate the transform properties */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; /* <-NB */
+}
+
+/* Position the faces */
+.flippety {
+  height: 100%;
+  -webkit-transform: translateZ(100px);
+  transform: translateZ(100px);
+}
+
+.flop {
+  width: 100%;
+  padding: 20px;
+
+  -webkit-transform: rotateX(-90deg) translateZ(-100px);
+  transform: rotateX(-90deg) translateZ(-100px);
+}
+
+/* Rotate the cube */
+.cube:hover {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg); /* Text bleed at 90º */
 }
