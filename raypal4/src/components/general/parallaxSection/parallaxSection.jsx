@@ -4,11 +4,15 @@ import "./parallaxSection.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated, useSpring } from "react-spring";
 
-import bush from "./bush.png";
-import sunset from "./blue-background.jpg";
+import bush from "./illustrations/bush.png";
+import sunset from "./illustrations/blue-background.jpg";
+import map from "./illustrations/map.svg";
+import chip from "./illustrations/chip.svg";
+import cms from "./illustrations/cms.svg";
+
 import pythonlogo from "./logos/python.svg";
 import javalogo from "./logos/java.svg";
-import cpplogo from "./logos/cpp.svg";
+import clogo from "./logos/C.svg";
 import kotlinlogo from "./logos/kotlin.svg";
 import webtechlogo from "./logos/webTech.svg";
 import wplogo from "./logos/wordpress.svg";
@@ -94,7 +98,6 @@ const ParallaxSection = () => {
         <div className="section-body">
           <Parallax
             pages={6}
-            style={{ top: "0", left: "0" }}
             id="para-cont"
             ref={(el) => {
               paraContainer = el;
@@ -102,9 +105,8 @@ const ParallaxSection = () => {
           >
             <ParallaxLayer
               offset={0}
-              speed={1}
+              speed={0}
               style={{
-                display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "black",
@@ -146,28 +148,51 @@ const ParallaxSection = () => {
 
             <ParallaxLayer
               offset={3}
-              speed={0.1}
+              speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "black",
+                backgroundColor: "blue",
               }}
-              factor={1.8}
+              factor={2}
             >
               <div className="row content-grid">
-                <h1>stuff</h1>
+                <h1 className="center">Stack</h1>
 
-                <div className="col s4 m3 l3">
-                  <img
-                    className="grid-image-para"
-                    alt="python logo"
-                    src={pythonlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Python</h5>
+                <div className="col s6 m6 l3">
+                  <div className="cube">
+                    <div className="flippety">
+                      <img
+                        className="grid-image-para"
+                        alt="python logo"
+                        src={pythonlogo}
+                      ></img>
+                      <div className="text-cont">
+                        <h5>Python</h5>
+                      </div>
+                    </div>
+                    <div className="flop">
+                      <img
+                        className="grid-image-inside"
+                        alt="map"
+                        src={map}
+                      ></img>
+                      <p>
+                        Punggol Mapper: A Data Structure and Algorithms School
+                        Project
+                      </p>
+                      <a
+                        className="waves-effect waves-light btn red"
+                        href="https://www.youtube.com/watch?v=fm8bxLQ7bkY"
+                        target="_blank"
+                      >
+                        <i className="material-icons left">play_arrow</i>Video
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="col s4 m3 l3">
+
+                <div className="col s6 m6 l3">
                   <img
                     className="grid-image-para"
                     alt="java logo"
@@ -177,27 +202,70 @@ const ParallaxSection = () => {
                     <h5>Java</h5>
                   </div>
                 </div>
-                <div className="col s4 m3 l3">
-                  <img
-                    className="grid-image-para"
-                    alt="cpp logo"
-                    src={cpplogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>C++</h5>
+
+                <div className="col s6 m6 l3">
+                  <div className="cube">
+                    <div className="flippety">
+                      <img
+                        className="grid-image-para"
+                        alt="c logo"
+                        src={clogo}
+                      ></img>
+                      <div className="text-cont">
+                        <h5>C</h5>
+                      </div>
+                    </div>
+
+                    <div className="flop">
+                      <img
+                        className="grid-image-inside"
+                        alt="chip"
+                        src={chip}
+                      ></img>
+                      <p>Embedded Voice Controlled Door Lock</p>
+                      <a
+                        className="waves-effect waves-light btn red"
+                        href="https://www.youtube.com/watch?v=eNc1Cjdc7rY"
+                        target="_blank"
+                      >
+                        <i className="material-icons left">play_arrow</i>Video
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="col s6 m3 l3">
-                  <img
-                    className="grid-image-para"
-                    alt="kotlin logo"
-                    src={kotlinlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Kotlin</h5>
+
+                <div className="col s6 m6 l3">
+                  <div className="cube">
+                    <div className="flippety">
+                      <img
+                        className="grid-image-para"
+                        alt="kotlin logo"
+                        src={kotlinlogo}
+                      ></img>
+                      <div className="text-cont">
+                        <h5>Kotlin</h5>
+                      </div>
+                    </div>
+
+                    <div className="flop">
+                      <img
+                        className="grid-image-inside"
+                        alt="map"
+                        src={map}
+                      ></img>
+                      <p>WHALK: An Android Mobile Development School Project</p>
+                      <a
+                        className="waves-effect waves-light btn red"
+                        href="https://www.youtube.com/watch?v=DJ_jqPybkhw"
+                        target="_blank"
+                      >
+                        <i className="material-icons left">play_arrow</i>Video
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="col s6 m4 l4">
+
+                <div className="col s6 m6 l4">
                   <img
                     className="grid-image-para"
                     alt="web technologies"
@@ -207,40 +275,76 @@ const ParallaxSection = () => {
                     <h5>Web Techs</h5>
                   </div>
                 </div>
-                <div className="col s6 m4 l4">
-                  <img
-                    className="grid-image-para"
-                    alt="wordpress"
-                    src={wplogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Wordpress</h5>
+
+                <div className="col s6 m6 l4">
+                  <div className="cube">
+                    <div className="flippety">
+                      <img
+                        className="grid-image-para"
+                        alt="wordpress"
+                        src={wplogo}
+                      ></img>
+                      <div className="text-cont">
+                        <h5>WordPress</h5>
+                      </div>
+                    </div>
+
+                    <div className="flop">
+                      <img
+                        className="grid-image-inside"
+                        alt="content management system"
+                        src={cms}
+                      ></img>
+                      <p>Better World Singapore Portal</p>
+                      <a
+                        className="waves-effect waves-light btn green"
+                        href="https://scout.betterworld.sg/"
+                        target="_blank"
+                      >
+                        <i className="material-icons left">play_arrow</i>Visit
+                        Site!
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="col s6 m4 l4">
+
+                <div className="col s6 m6 l4">
                   <img
                     className="grid-image-para"
-                    alt="mongodb logo"
-                    src={mongologo}
+                    alt="react logo"
+                    src={reactlogo}
                   ></img>
                   <div className="text-cont">
-                    <h5>MongoDB</h5>
+                    <h5>React</h5>
                   </div>
                 </div>
               </div>
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.8}
+              offset={4.2}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "black",
+                backgroundColor: "green",
               }}
-              factor={1.8}
+              className="para-mobile-fix"
             >
               <h1>WOI 2</h1>
+            </ParallaxLayer>
+
+            <ParallaxLayer
+              offset={5.2}
+              speed={0}
+              style={{
+                color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "red",
+              }}
+              className="para-mobile-fix"
+            >
+              <h1>WOI 3</h1>
             </ParallaxLayer>
           </Parallax>
         </div>,
