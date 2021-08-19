@@ -25,6 +25,7 @@ import wplogo from "./logos/wordpress.svg";
 import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
+import { node } from "prop-types";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
@@ -34,8 +35,8 @@ const ParallaxSection = () => {
 
   const intersection = useIntersection(contentGrid, {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
+    rootMargin: "10px",
+    threshold: 0.1,
   });
 
   const fadeIn = (element) => {
@@ -58,7 +59,7 @@ const ParallaxSection = () => {
     });
   };
 
-  intersection && intersection.intersectionRatio < 0.3
+  intersection && intersection.intersectionRatio < 0.1
     ? fadeOut(".content-grid")
     : fadeIn(".content-grid");
 
@@ -307,11 +308,8 @@ const ParallaxSection = () => {
                   <div className="sub">
                     <h4>Who am i?</h4>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book.
+                      Hi! I'm a ICT Software Engineering Student at the
+                      Singapore Institute of Technology.
                     </p>
                   </div>
                 </animated.div>
@@ -382,7 +380,7 @@ const ParallaxSection = () => {
                       </p>
                       <a
                         className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=fm8bxLQ7bkY"
+                        href="https://www.youtube.com/watch?v=r3Jpb537km0"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -431,7 +429,7 @@ const ParallaxSection = () => {
                       <p>Embedded Voice Controlled Door Lock</p>
                       <a
                         className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=eNc1Cjdc7rY"
+                        href="https://www.youtube.com/watch?v=QSWcDVKVmMI"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -565,20 +563,59 @@ const ParallaxSection = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.5}
+              offset={4.9}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
                 backgroundImage: `url(${webdev})`,
-                backgroundSize: "auto 300px",
-                backgroundColor: "white",
+                backgroundSize: "auto 60%",
+                backgroundColor: "#121212",
               }}
               className="div-background para-mobile-fix"
+            >
+              <div className="right-cont">
+                <h2>This Portfolio Project is built with</h2>
+                <div className="row">
+                  <div className="col s4 m4 l4">
+                    <img
+                      className="grid-image-para"
+                      alt="web technologies"
+                      src={webtechlogo}
+                    ></img>
+                  </div>
+                  <div className="col s4 m4 l4">
+                    <img
+                      className="grid-image-para"
+                      alt="react logo"
+                      src={reactlogo}
+                    ></img>
+                  </div>
+                  <div className="col s4 m4 l4">
+                    <img
+                      className="grid-image-para"
+                      alt="node logo"
+                      src={nodelogo}
+                    ></img>
+                  </div>
+                </div>
+              </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer
+              offset={4.35}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              className="no-show-mobile"
+              factor={1.1}
             ></ParallaxLayer>
 
             <ParallaxLayer
-              offset={5.6}
+              offset={6}
               speed={0}
               style={{
                 color: "white",
@@ -587,9 +624,23 @@ const ParallaxSection = () => {
               className="para-mobile-fix"
             >
               <div className="end-para">
-                <p className="center-align">Made with love</p>
+                <p className="center-align">
+                  Made with <i class="material-icons">mood</i>
+                </p>
               </div>
             </ParallaxLayer>
+
+            <ParallaxLayer
+              offset={6}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={0.8}
+              className="no-show-mobile"
+            ></ParallaxLayer>
           </Parallax>
         </div>,
       ].map((div, key) => (
