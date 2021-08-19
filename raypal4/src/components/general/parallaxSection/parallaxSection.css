@@ -2,7 +2,7 @@
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
   /* transition: all 3s ease-in-out; */
-  background-color: black;
+  background-color: #121212;
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
@@ -90,19 +90,32 @@
 
 .content-grid .text-cont {
   position: absolute;
-  left: 20px;
+  left: 10px;
   bottom: 20px;
 }
 
 .end-para {
-  margin-top: 130px;
+  position: absolute;
   height: 100%;
   width: 100%;
+  bottom: -85%;
 }
 
 .div-background {
   background-repeat: no-repeat;
-  background-position: 0% 50%;
+  background-position: 0% 100%;
+}
+
+.right-cont {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  width: 45%;
+  text-align: center;
+}
+
+.right-cont .grid-image-para {
+  height: 100px;
 }
 
 @media screen and (max-width: 600px) {
@@ -126,11 +139,22 @@
   }
 
   .end-para {
-    margin-top: 0px;
+    top: 150px;
   }
 
   .no-show-mobile {
     display: none;
+  }
+
+  .right-cont {
+    right: 0%;
+    top: -20%;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .right-cont .grid-image-para {
+    height: 60px;
   }
 }
 
@@ -148,6 +172,10 @@
 
   .content-grid .grid-image-para {
     height: 80px;
+  }
+
+  .no-show-mobile {
+    display: none;
   }
 }
 
@@ -213,18 +241,60 @@
   height: 100%;
   -webkit-transform: translateZ(100px);
   transform: translateZ(100px);
+  cursor: pointer;
 }
 
 .flop {
   width: 100%;
   padding: 20px;
-
+  cursor: pointer;
   -webkit-transform: rotateX(-90deg) translateZ(-100px);
   transform: rotateX(-90deg) translateZ(-100px);
 }
 
 /* Rotate the cube */
-.cube:hover {
+.cube.active {
   -webkit-transform: rotateX(90deg);
   transform: rotateX(90deg); /* Text bleed at 90º */
+}
+
+.cube.mobile:hover {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg); /* Text bleed at 90º */
+}
+
+/* bulb */
+#bulb {
+  width: 10%;
+  margin-left: 80%;
+  margin-top: 0px;
+  transform: rotate(180deg);
+}
+.filament {
+  transition: all 0.2s ease;
+}
+.cls-5 {
+  transition: all 1s ease;
+}
+
+#bulb .filament.active {
+  fill: orange;
+}
+#bulb .cls-5.active {
+  fill: #fff9a3;
+}
+.prong {
+  fill: #6d6e71;
+}
+.cls-2 {
+  fill: #808285;
+}
+.cls-3 {
+  fill: #939598;
+}
+.cls-4 {
+  opacity: 0.51;
+}
+.cls-5 {
+  fill: #d1d3d4;
 }
