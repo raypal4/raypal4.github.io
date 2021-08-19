@@ -2,7 +2,7 @@
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
   /* transition: all 3s ease-in-out; */
-  background-color: black;
+  background-color: #121212;
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
@@ -213,18 +213,60 @@
   height: 100%;
   -webkit-transform: translateZ(100px);
   transform: translateZ(100px);
+  cursor: pointer;
 }
 
 .flop {
   width: 100%;
   padding: 20px;
-
+  cursor: pointer;
   -webkit-transform: rotateX(-90deg) translateZ(-100px);
   transform: rotateX(-90deg) translateZ(-100px);
 }
 
 /* Rotate the cube */
-.cube:hover {
+.cube.active {
   -webkit-transform: rotateX(90deg);
   transform: rotateX(90deg); /* Text bleed at 90º */
+}
+
+.cube.mobile:hover {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg); /* Text bleed at 90º */
+}
+
+/* bulb */
+#bulb {
+  width: 5%;
+  margin-left: 80%;
+  margin-top: 10px;
+  transform: rotate(180deg);
+}
+.filament {
+  transition: all 0.2s ease;
+}
+.cls-5 {
+  transition: all 1s ease;
+}
+
+#bulb .filament.active {
+  fill: orange;
+}
+#bulb .cls-5.active {
+  fill: #fff9a3;
+}
+.prong {
+  fill: #6d6e71;
+}
+.cls-2 {
+  fill: #808285;
+}
+.cls-3 {
+  fill: #939598;
+}
+.cls-4 {
+  opacity: 0.51;
+}
+.cls-5 {
+  fill: #d1d3d4;
 }

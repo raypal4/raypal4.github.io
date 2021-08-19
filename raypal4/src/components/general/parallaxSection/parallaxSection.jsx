@@ -3,6 +3,9 @@ import { RightIn } from "../animations/animations.jsx";
 import "./parallaxSection.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { animated, useSpring } from "react-spring";
+import { useIntersection } from "react-use";
+import gsap from "gsap";
+import { isMobile } from "react-device-detect";
 
 import bush from "./illustrations/bush.png";
 import sunset from "./illustrations/blue-background.jpg";
@@ -10,7 +13,6 @@ import map from "./illustrations/map.svg";
 import chip from "./illustrations/chip.svg";
 import cms from "./illustrations/cms.svg";
 import webdev from "./illustrations/web-dev.svg";
-import elements from "./illustrations/elements.svg";
 import cool from "./illustrations/cool.svg";
 import soil from "./illustrations/soil.svg";
 
@@ -26,7 +28,39 @@ import reactlogo from "./logos/react.svg";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
+  var lightisON = false;
   let paraContainer = useRef(null);
+  let contentGrid = useRef(null);
+
+  const intersection = useIntersection(contentGrid, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      y: -60,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+    lightisON = true;
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -20,
+      ease: "power4.out",
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".content-grid")
+    : fadeIn(".content-grid");
 
   useEffect(() => {
     const handleScroll = () =>
@@ -36,6 +70,13 @@ const ParallaxSection = () => {
     const x = document.querySelector("#para-cont");
     x.addEventListener("scroll", handleScroll);
   });
+
+  const [isActive, setActive] = useState("false");
+  const ToggleClass = () => {
+    if (!isMobile) {
+      setActive(!isActive);
+    }
+  };
 
   function reverser(input, valuetoreverse, reversehowmuch) {
     if (input < valuetoreverse) {
@@ -106,6 +147,128 @@ const ParallaxSection = () => {
               paraContainer = el;
             }}
           >
+            <ParallaxLayer offset={2.88} speed={0.5} className="no-show-mobile">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="bulb"
+                viewBox="0 0 154.72 276.77"
+              >
+                <path
+                  d="M55.2 139.26l-.5 1.67 4.63 15.48.5-1.67-4.63-15.48zM85.62 123.84l-.5 1.67 4.63 15.48.49-1.67-4.62-15.48z"
+                  className={lightisON ? "filament active" : "filament"}
+                />
+                <path
+                  d="M90.24 139.32l-.49 1.67 4.62 15.48.5-1.67-4.63-15.48zM68.11 123.84l-.5 1.67 4.62 15.48.5-1.67-4.62-15.48z"
+                  className={lightisON ? "filament active" : "filament"}
+                />
+                <path
+                  d="M72.73 139.32l-.5 1.67 4.63 15.48.5-1.67-4.63-15.48zM58.85 154.8l.5 1.67 4.63-15.48-.5-1.67-4.63 15.48z"
+                  className={lightisON ? "filament active" : "filament"}
+                />
+                <path
+                  d="M76.36 154.8l.5 1.67 4.63-15.48-.5-1.67-4.63 15.48zM63.48 139.32l.5 1.67 4.62-15.48-.49-1.67-4.63 15.48zM80.99 139.32l.5 1.67 4.62-15.48-.49-1.67-4.63 15.48zM93.88 154.8l.49 1.67L99 140.99l-.5-1.67-4.62 15.48z"
+                  className={lightisON ? "filament active" : "filament"}
+                />
+                <rect
+                  width="2.36"
+                  height="59.85"
+                  x="53.05"
+                  y="138.65"
+                  className="prong"
+                  rx="1.18"
+                  ry="1.18"
+                />
+                <rect
+                  width="2.36"
+                  height="58.81"
+                  x="98.3"
+                  y="138.65"
+                  className="prong"
+                  rx="1.18"
+                  ry="1.18"
+                />
+                <path d="M41.05 193.11h71.61v46.03H41.05z" className="cls-2" />
+                <ellipse
+                  cx="76.85"
+                  cy="239.14"
+                  className="cls-2"
+                  rx="35.81"
+                  ry="37.63"
+                />
+                <rect
+                  width="83"
+                  height="6.33"
+                  x="276.75"
+                  y="505.69"
+                  className="cls-3"
+                  rx="3.17"
+                  ry="3.17"
+                  transform="rotate(13.12 1474.696 -687.534)"
+                />
+                <rect
+                  width="83"
+                  height="6.33"
+                  x="277.26"
+                  y="518.19"
+                  className="cls-3"
+                  rx="3.17"
+                  ry="3.17"
+                  transform="rotate(13.12 1475.208 -675.038)"
+                />
+                <rect
+                  width="83"
+                  height="6.33"
+                  x="277.51"
+                  y="530.7"
+                  className="cls-3"
+                  rx="3.17"
+                  ry="3.17"
+                  transform="rotate(13.12 1475.454 -662.554)"
+                />
+                <rect
+                  width="27.39"
+                  height="6.33"
+                  x="278.36"
+                  y="536.89"
+                  className="cls-3"
+                  rx="3.17"
+                  ry="3.17"
+                  transform="rotate(13.12 1448.504 -656.327)"
+                />
+                <rect
+                  width="27.47"
+                  height="6.33"
+                  x="330.82"
+                  y="499.48"
+                  className="cls-3"
+                  rx="3.17"
+                  ry="3.17"
+                  transform="rotate(13.12 1500.99 -693.73)"
+                />
+                <g className="cls-4">
+                  <rect
+                    width="94.5"
+                    height="30.6"
+                    x="30.11"
+                    y="169.86"
+                    className={lightisON ? "cls-5 active" : "cls-5"}
+                    rx="12.26"
+                    ry="12.26"
+                  />
+                  <circle
+                    cx="77.36"
+                    cy="77.36"
+                    r="77.36"
+                    className={lightisON ? "cls-5 active" : "cls-5"}
+                  />
+                  <path
+                    d="M16.24 124.35c4 0 13.86 40.77 13.86 57.21h94.5c0-16.44 9.88-57.21 13.86-57.21H16.24z"
+                    className={lightisON ? "cls-5 active" : "cls-5"}
+                  />
+                </g>
+              </svg>
+            </ParallaxLayer>
+
             <ParallaxLayer
               offset={1.8}
               speed={0.5}
@@ -116,24 +279,6 @@ const ParallaxSection = () => {
               }}
               factor={1.8}
             ></ParallaxLayer>
-
-            <ParallaxLayer
-              offset={2}
-              speed={0.3}
-              className="no-show-mobile"
-              style={{
-                transition: "all 1s ease",
-              }}
-            >
-              <img
-                src={cool}
-                style={{
-                  display: "block",
-                  width: "20%",
-                  marginLeft: "75%",
-                }}
-              />
-            </ParallaxLayer>
 
             <ParallaxLayer
               offset={0}
@@ -178,7 +323,7 @@ const ParallaxSection = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={3}
+              offset={2.99}
               speed={0.1}
               className="no-show-mobile"
               style={{
@@ -186,12 +331,13 @@ const ParallaxSection = () => {
               }}
             >
               <img
-                src={elements}
+                src={cool}
                 style={{
                   display: "block",
                   width: "20%",
                   marginLeft: "5%",
                 }}
+                alt="solutionism person"
               />
             </ParallaxLayer>
 
@@ -204,11 +350,17 @@ const ParallaxSection = () => {
               }}
               factor={1.8}
             >
-              <div className="row content-grid">
+              <div ref={contentGrid} className="row content-grid">
                 <h1 className="center">Stack and Projects</h1>
 
                 <div className="col s6 m6 l3">
-                  <div className="cube">
+                  <div
+                    className={
+                      (isActive ? "cube" : "cube active") +
+                      (isMobile ? " mobile" : "")
+                    }
+                    onClick={ToggleClass}
+                  >
                     <div className="flippety">
                       <img
                         className="grid-image-para"
@@ -252,7 +404,13 @@ const ParallaxSection = () => {
                 </div>
 
                 <div className="col s6 m6 l3">
-                  <div className="cube">
+                  <div
+                    className={
+                      (isActive ? "cube" : "cube active") +
+                      (isMobile ? " mobile" : "")
+                    }
+                    onClick={ToggleClass}
+                  >
                     <div className="flippety">
                       <img
                         className="grid-image-para"
@@ -284,7 +442,13 @@ const ParallaxSection = () => {
                 </div>
 
                 <div className="col s6 m6 l3">
-                  <div className="cube">
+                  <div
+                    className={
+                      (isActive ? "cube" : "cube active") +
+                      (isMobile ? " mobile" : "")
+                    }
+                    onClick={ToggleClass}
+                  >
                     <div className="flippety">
                       <img
                         className="grid-image-para"
@@ -327,7 +491,13 @@ const ParallaxSection = () => {
                 </div>
 
                 <div className="col s6 m6 l4">
-                  <div className="cube">
+                  <div
+                    className={
+                      (isActive ? "cube" : "cube active") +
+                      (isMobile ? " mobile" : "")
+                    }
+                    onClick={ToggleClass}
+                  >
                     <div className="flippety">
                       <img
                         className="grid-image-para"

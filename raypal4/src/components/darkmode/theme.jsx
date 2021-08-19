@@ -1,6 +1,6 @@
 export const lightTheme = {
   body: "white",
-  text: "black",
+  text: "#121212",
   background: "white",
   gridtext: "var(--text-primary-color)",
   grid1: "var(--light-primary-color)",
@@ -9,7 +9,7 @@ export const lightTheme = {
   bb8: "#7c9a9c",
 };
 export const darkTheme = {
-  body: "black",
+  body: "#121212",
   text: "white",
   background: "#0E1D28",
   gridtext: "var(--text-primary-color)",
