@@ -549,7 +549,7 @@ const ParallaxSection = () => {
                   </div>
                 </div>
 
-                <div className="col s6 m6 l6">
+                <div className="col s12 m6 l6">
                   <img
                     className="grid-image-para"
                     alt="mongo logo"
