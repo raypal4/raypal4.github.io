@@ -477,7 +477,7 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "purple",
+                backgroundColor: "black",
               }}
               factor={1.6}
             >
@@ -699,7 +699,7 @@ const ParallaxSection = () => {
               className="no-show-mobile"
             ></ParallaxLayer>
 
-            {/* Ending made with smiles 5.3*/}
+            {/* Ending made with smiles 5.25*/}
             <ParallaxLayer
               offset={5.25}
               speed={0}
@@ -718,7 +718,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
-            {/* Soil 9.9 */}
+            {/* Soil 9.5 */}
             <ParallaxLayer
               offset={9.5}
               speed={0.5}
