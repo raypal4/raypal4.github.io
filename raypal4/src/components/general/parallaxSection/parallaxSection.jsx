@@ -34,8 +34,8 @@ const ParallaxSection = () => {
 
   const intersection = useIntersection(contentGrid, {
     root: null,
-    rootMargin: "10px",
-    threshold: 0.3,
+    rootMargin: "0px",
+    threshold: 0.1,
   });
 
   const fadeIn = (element) => {
@@ -58,13 +58,26 @@ const ParallaxSection = () => {
     });
   };
 
-  intersection && intersection.intersectionRatio < 0.3
+  intersection && intersection.intersectionRatio < 0.1
     ? fadeOut(".content-grid")
     : fadeIn(".content-grid");
 
   useEffect(() => {
-    const handleScroll = () =>
+    const handleScroll = () => {
+      if (paraContainer != null) {
+        if (paraContainer.current < 200) {
+          document.getElementById("navbar").style.left = "0px";
+          document.getElementById("main-cont").style.left = "78px";
+          document.getElementById("main-cont").style.width =
+            "calc(100% - 78px)";
+        } else {
+          document.getElementById("navbar").style.left = "-100px";
+          document.getElementById("main-cont").style.left = "0px";
+          document.getElementById("main-cont").style.width = "100%";
+        }
+      }
       paraContainer != null ? setdivScale(paraContainer.current / 10) : void 0;
+    };
 
     //Workaround for binding event listener to the react spring parralax library
     const x = document.querySelector("#para-cont");
@@ -262,7 +275,7 @@ const ParallaxSection = () => {
               paraContainer = el;
             }}
           >
-            <ParallaxLayer offset={2.88} speed={0.5} className="no-show-mobile">
+            <ParallaxLayer offset={2.88} speed={0.5}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="bulb"
@@ -454,13 +467,13 @@ const ParallaxSection = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={3}
+              offset={3.2}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
               }}
-              factor={1.8}
+              factor={1.6}
             >
               <div ref={contentGrid} className="row content-grid">
                 <h1 className="center">Stack and Projects</h1>
@@ -506,47 +519,51 @@ const ParallaxSection = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.9}
+              offset={5.3}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundImage: `url(${webdev})`,
-                backgroundSize: "auto 60%",
-                backgroundColor: "#121212",
+                backgroundColor: "black",
+                position: "relative",
               }}
-              className="div-background para-mobile-fix"
+              className="para-mobile-fix"
             >
-              <div className="right-cont">
-                <h2>This Portfolio Project is built with</h2>
-                <div className="row">
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="web technologies"
-                      src={webtechlogo}
-                    ></img>
-                  </div>
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="react logo"
-                      src={reactlogo}
-                    ></img>
-                  </div>
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="node logo"
-                      src={nodelogo}
-                    ></img>
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
                   </div>
                 </div>
               </div>
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.35}
+              offset={4.9}
               speed={0.5}
               style={{
                 backgroundSize: "cover",
@@ -568,7 +585,7 @@ const ParallaxSection = () => {
             >
               <div className="end-para">
                 <p className="center-align">
-                  Made with <i class="material-icons">mood</i>
+                  Made with <i className="material-icons">mood</i>
                 </p>
               </div>
             </ParallaxLayer>
