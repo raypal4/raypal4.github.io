@@ -25,7 +25,6 @@ import wplogo from "./logos/wordpress.svg";
 import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
-import { node } from "prop-types";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
@@ -36,7 +35,7 @@ const ParallaxSection = () => {
   const intersection = useIntersection(contentGrid, {
     root: null,
     rootMargin: "10px",
-    threshold: 0.1,
+    threshold: 0.3,
   });
 
   const fadeIn = (element) => {
@@ -59,7 +58,7 @@ const ParallaxSection = () => {
     });
   };
 
-  intersection && intersection.intersectionRatio < 0.1
+  intersection && intersection.intersectionRatio < 0.3
     ? fadeOut(".content-grid")
     : fadeIn(".content-grid");
 
@@ -136,6 +135,121 @@ const ParallaxSection = () => {
     },
     delay: 100,
   });
+
+  const gridcolumns = [
+    {
+      title: "Python",
+      icon: pythonlogo,
+      insideIcon: map,
+      insideText: "Punggol Mapper: A Data Structure and Algorithms Project",
+      column: "col s6 m6 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=r3Jpb537km0",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Java",
+      icon: javalogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m6 l3",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: null,
+    },
+    {
+      title: "C",
+      icon: clogo,
+      insideIcon: chip,
+      insideText: "Embedded Voice Controlled Door Lock",
+      column: "col s6 m6 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=QSWcDVKVmMI",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Kotlin",
+      icon: kotlinlogo,
+      insideIcon: map,
+      insideText: "WHALK: An Android Mobile Development Project",
+      column: "col s6 m6 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=DJ_jqPybkhw",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Web Techs",
+      icon: webtechlogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m6 l4",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "WordPress",
+      icon: wplogo,
+      insideIcon: cms,
+      insideText: "Better World Singapore Portal",
+      column: "col s6 m6 l4",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "location_on",
+      link: "https://scout.betterworld.sg/",
+      buttonclass: "waves-effect waves-light btn green",
+      buttontext: "Visit Site!",
+    },
+    {
+      title: "React",
+      icon: reactlogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m6 l4",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "Node.js",
+      icon: nodelogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m6 l6",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "MongoDB",
+      icon: mongologo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s12 m6 l6",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+  ];
 
   return (
     <React.Fragment>
@@ -351,214 +465,43 @@ const ParallaxSection = () => {
               <div ref={contentGrid} className="row content-grid">
                 <h1 className="center">Stack and Projects</h1>
 
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="python logo"
-                        src={pythonlogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>Python</h5>
+                {gridcolumns.map((item, index) => {
+                  return (
+                    <div className={item.column} key={index}>
+                      <div className={item.cubeclass} onClick={ToggleClass}>
+                        <div className="flippety">
+                          <img
+                            className="grid-image-para"
+                            alt={item.title}
+                            src={item.icon}
+                          ></img>
+                          <div className="text-cont">
+                            <h5>{item.title}</h5>
+                          </div>
+                        </div>
+                        <div className="flop">
+                          <img
+                            className="grid-image-inside"
+                            alt={item.insideText}
+                            src={item.insideIcon}
+                          ></img>
+                          <p>{item.insideText}</p>
+                          <a
+                            className={item.buttonclass}
+                            href={item.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <i className="material-icons left">
+                              {item.linkicon}
+                            </i>
+                            {item.buttontext}
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="map"
-                        src={map}
-                      ></img>
-                      <p>
-                        Punggol Mapper: A Data Structure and Algorithms Project
-                      </p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=r3Jpb537km0"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <img
-                    className="grid-image-para"
-                    alt="java logo"
-                    src={javalogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Java</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="c logo"
-                        src={clogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>C</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="chip"
-                        src={chip}
-                      ></img>
-                      <p>Embedded Voice Controlled Door Lock</p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=QSWcDVKVmMI"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="kotlin logo"
-                        src={kotlinlogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>Kotlin</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="map"
-                        src={map}
-                      ></img>
-                      <p>WHALK: An Android Mobile Development Project</p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=DJ_jqPybkhw"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <img
-                    className="grid-image-para"
-                    alt="web technologies"
-                    src={webtechlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Web Techs</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="wordpress"
-                        src={wplogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>WordPress</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="content management system"
-                        src={cms}
-                      ></img>
-                      <p>Better World Singapore Portal</p>
-                      <a
-                        className="waves-effect waves-light btn green"
-                        href="https://scout.betterworld.sg/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">location_on</i>Visit
-                        Site!
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <img
-                    className="grid-image-para"
-                    alt="react logo"
-                    src={reactlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>React</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l6">
-                  <img
-                    className="grid-image-para"
-                    alt="node logo"
-                    src={nodelogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Node.js</h5>
-                  </div>
-                </div>
-
-                <div className="col s12 m6 l6">
-                  <img
-                    className="grid-image-para"
-                    alt="mongo logo"
-                    src={mongologo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>MongoDB</h5>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </ParallaxLayer>
 
