@@ -269,7 +269,7 @@ const ParallaxSection = () => {
       {[
         <div className="section-body">
           <Parallax
-            pages={7}
+            pages={10.5}
             id="para-cont"
             ref={(el) => {
               paraContainer = el;
@@ -398,7 +398,7 @@ const ParallaxSection = () => {
               </svg>
             </ParallaxLayer>
 
-            {/* Soil 1 */}
+            {/* Soil */}
             <ParallaxLayer
               offset={1.8}
               speed={0.5}
@@ -477,6 +477,7 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
+                backgroundColor: "purple",
               }}
               factor={1.6}
             >
@@ -523,15 +524,16 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
-            {/* Portfolio Ending Item */}
+            {/* Portfolio Item - 5 */}
             <ParallaxLayer
-              offset={5.3}
+              offset={5}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "black",
+                backgroundColor: "red",
                 position: "relative",
+                height: "150vh",
               }}
               className="para-mobile-fix"
             >
@@ -568,9 +570,9 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
-            {/* Soil 2 */}
+            {/* Soil 4.8 */}
             <ParallaxLayer
-              offset={4.8}
+              offset={4.7}
               speed={0.5}
               style={{
                 backgroundSize: "cover",
@@ -581,23 +583,52 @@ const ParallaxSection = () => {
               factor={1.1}
             ></ParallaxLayer>
 
-            {/* Ending made with smiles */}
+            {/* Portfolio Item 5.1 */}
             <ParallaxLayer
-              offset={6}
+              offset={5.1}
               speed={0}
               style={{
                 color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "green",
+                position: "relative",
+                height: "150vh",
               }}
-              className="para-mobile-fix"
             >
-              <div className="end-para">
-                <p className="center-align">
-                  Made with <i className="material-icons">mood</i>
-                </p>
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ParallaxLayer>
 
-            {/* Soil 3 */}
+            {/* Soil 6 */}
             <ParallaxLayer
               offset={6}
               speed={0.5}
@@ -606,7 +637,97 @@ const ParallaxSection = () => {
                 backgroundImage: `url(${soil})`,
                 backgroundPosition: "50% 50%",
               }}
-              factor={0.8}
+              className="no-show-mobile"
+              factor={1.1}
+            ></ParallaxLayer>
+
+            {/* Portfolio Ending Item 5.2 */}
+            <ParallaxLayer
+              offset={5.2}
+              speed={0}
+              style={{
+                color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "blue",
+                position: "relative",
+                height: "150vh",
+              }}
+            >
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ParallaxLayer>
+
+            {/* Soil 7.9 */}
+            <ParallaxLayer
+              offset={7.9}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={1.1}
+              className="no-show-mobile"
+            ></ParallaxLayer>
+
+            {/* Ending made with smiles 5.3*/}
+            <ParallaxLayer
+              offset={5.25}
+              speed={0}
+              style={{
+                color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "brown",
+                position: "relative",
+                height: "80vh",
+              }}
+            >
+              <div className="end-para">
+                <p className="center-align">
+                  Made with <i className="material-icons">mood</i>
+                </p>
+              </div>
+            </ParallaxLayer>
+
+            {/* Soil 9.9 */}
+            <ParallaxLayer
+              offset={9.5}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={1.1}
               className="no-show-mobile"
             ></ParallaxLayer>
           </Parallax>
