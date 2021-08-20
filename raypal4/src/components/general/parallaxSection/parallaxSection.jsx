@@ -275,6 +275,7 @@ const ParallaxSection = () => {
               paraContainer = el;
             }}
           >
+            {/* Lightbulb */}
             <ParallaxLayer offset={2.88} speed={0.5}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -397,6 +398,7 @@ const ParallaxSection = () => {
               </svg>
             </ParallaxLayer>
 
+            {/* Soil 1 */}
             <ParallaxLayer
               offset={1.8}
               speed={0.5}
@@ -408,6 +410,7 @@ const ParallaxSection = () => {
               factor={1.8}
             ></ParallaxLayer>
 
+            {/* Cover Section */}
             <ParallaxLayer
               offset={0}
               speed={0}
@@ -447,6 +450,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            {/* Cool guy parralax img */}
             <ParallaxLayer
               offset={2.99}
               speed={0.1}
@@ -466,6 +470,7 @@ const ParallaxSection = () => {
               />
             </ParallaxLayer>
 
+            {/* Stack and projects */}
             <ParallaxLayer
               offset={3.2}
               speed={0}
@@ -518,6 +523,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            {/* Portfolio Ending Item */}
             <ParallaxLayer
               offset={5.3}
               speed={0}
@@ -562,6 +568,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            {/* Soil 2 */}
             <ParallaxLayer
               offset={4.8}
               speed={0.5}
@@ -574,6 +581,7 @@ const ParallaxSection = () => {
               factor={1.1}
             ></ParallaxLayer>
 
+            {/* Ending made with smiles */}
             <ParallaxLayer
               offset={6}
               speed={0}
@@ -589,6 +597,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            {/* Soil 3 */}
             <ParallaxLayer
               offset={6}
               speed={0.5}
