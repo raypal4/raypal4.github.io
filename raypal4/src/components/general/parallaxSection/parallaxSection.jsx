@@ -155,7 +155,7 @@ const ParallaxSection = () => {
       icon: pythonlogo,
       insideIcon: map,
       insideText: "Punggol Mapper: A Data Structure and Algorithms Project",
-      column: "col s6 m6 l3",
+      column: "col s6 m4 l3",
       cubeclass:
         (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
       linkicon: "play_arrow",
@@ -168,7 +168,7 @@ const ParallaxSection = () => {
       icon: javalogo,
       insideIcon: null,
       insideText: "",
-      column: "col s6 m6 l3",
+      column: "col s6 m4 l3",
       cubeclass: "cube",
       linkicon: null,
       link: null,
@@ -180,7 +180,7 @@ const ParallaxSection = () => {
       icon: clogo,
       insideIcon: chip,
       insideText: "Embedded Voice Controlled Door Lock",
-      column: "col s6 m6 l3",
+      column: "col s6 m4 l3",
       cubeclass:
         (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
       linkicon: "play_arrow",
@@ -193,7 +193,7 @@ const ParallaxSection = () => {
       icon: kotlinlogo,
       insideIcon: map,
       insideText: "WHALK: An Android Mobile Development Project",
-      column: "col s6 m6 l3",
+      column: "col s6 m4 l3",
       cubeclass:
         (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
       linkicon: "play_arrow",
@@ -206,7 +206,7 @@ const ParallaxSection = () => {
       icon: webtechlogo,
       insideIcon: null,
       insideText: "",
-      column: "col s6 m6 l4",
+      column: "col s6 m4 l4",
       cubeclass: "cube",
       linkicon: null,
       link: null,
@@ -218,7 +218,7 @@ const ParallaxSection = () => {
       icon: wplogo,
       insideIcon: cms,
       insideText: "Better World Singapore Portal",
-      column: "col s6 m6 l4",
+      column: "col s6 m4 l4",
       cubeclass:
         (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
       linkicon: "location_on",
@@ -231,7 +231,7 @@ const ParallaxSection = () => {
       icon: reactlogo,
       insideIcon: null,
       insideText: "",
-      column: "col s6 m6 l4",
+      column: "col s6 m4 l4",
       cubeclass: "cube",
       linkicon: null,
       link: null,
@@ -243,7 +243,7 @@ const ParallaxSection = () => {
       icon: nodelogo,
       insideIcon: null,
       insideText: "",
-      column: "col s6 m6 l6",
+      column: "col s6 m4 l6",
       cubeclass: "cube",
       linkicon: null,
       link: null,
@@ -255,7 +255,7 @@ const ParallaxSection = () => {
       icon: mongologo,
       insideIcon: null,
       insideText: "",
-      column: "col s12 m6 l6",
+      column: "col s12 m4 l6",
       cubeclass: "cube",
       linkicon: null,
       link: null,
@@ -563,7 +563,7 @@ const ParallaxSection = () => {
             </ParallaxLayer>
 
             <ParallaxLayer
-              offset={4.9}
+              offset={4.8}
               speed={0.5}
               style={{
                 backgroundSize: "cover",
@@ -579,7 +579,6 @@ const ParallaxSection = () => {
               speed={0}
               style={{
                 color: "white",
-                transition: "all 0.1s ease",
               }}
               className="para-mobile-fix"
             >
