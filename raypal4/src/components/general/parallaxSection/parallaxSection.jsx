@@ -25,7 +25,6 @@ import wplogo from "./logos/wordpress.svg";
 import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
-import { node } from "prop-types";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
@@ -35,7 +34,7 @@ const ParallaxSection = () => {
 
   const intersection = useIntersection(contentGrid, {
     root: null,
-    rootMargin: "10px",
+    rootMargin: "0px",
     threshold: 0.1,
   });
 
@@ -64,8 +63,21 @@ const ParallaxSection = () => {
     : fadeIn(".content-grid");
 
   useEffect(() => {
-    const handleScroll = () =>
+    const handleScroll = () => {
+      if (paraContainer != null) {
+        if (paraContainer.current < 200) {
+          document.getElementById("navbar").style.left = "0px";
+          document.getElementById("main-cont").style.left = "78px";
+          document.getElementById("main-cont").style.width =
+            "calc(100% - 78px)";
+        } else {
+          document.getElementById("navbar").style.left = "-100px";
+          document.getElementById("main-cont").style.left = "0px";
+          document.getElementById("main-cont").style.width = "100%";
+        }
+      }
       paraContainer != null ? setdivScale(paraContainer.current / 10) : void 0;
+    };
 
     //Workaround for binding event listener to the react spring parralax library
     const x = document.querySelector("#para-cont");
@@ -137,18 +149,134 @@ const ParallaxSection = () => {
     delay: 100,
   });
 
+  const gridcolumns = [
+    {
+      title: "Python",
+      icon: pythonlogo,
+      insideIcon: map,
+      insideText: "Punggol Mapper: A Data Structure and Algorithms Project",
+      column: "col s6 m4 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=r3Jpb537km0",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Java",
+      icon: javalogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m4 l3",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: null,
+    },
+    {
+      title: "C",
+      icon: clogo,
+      insideIcon: chip,
+      insideText: "Embedded Voice Controlled Door Lock",
+      column: "col s6 m4 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=QSWcDVKVmMI",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Kotlin",
+      icon: kotlinlogo,
+      insideIcon: map,
+      insideText: "WHALK: An Android Mobile Development Project",
+      column: "col s6 m4 l3",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "play_arrow",
+      link: "https://www.youtube.com/watch?v=DJ_jqPybkhw",
+      buttonclass: "waves-effect waves-light btn red",
+      buttontext: "Video",
+    },
+    {
+      title: "Web Techs",
+      icon: webtechlogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m4 l4",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "WordPress",
+      icon: wplogo,
+      insideIcon: cms,
+      insideText: "Better World Singapore Portal",
+      column: "col s6 m4 l4",
+      cubeclass:
+        (isActive ? "cube" : "cube active") + (isMobile ? " mobile" : ""),
+      linkicon: "location_on",
+      link: "https://scout.betterworld.sg/",
+      buttonclass: "waves-effect waves-light btn green",
+      buttontext: "Visit Site!",
+    },
+    {
+      title: "React",
+      icon: reactlogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m4 l4",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "Node.js",
+      icon: nodelogo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s6 m4 l6",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+    {
+      title: "MongoDB",
+      icon: mongologo,
+      insideIcon: null,
+      insideText: "",
+      column: "col s12 m4 l6",
+      cubeclass: "cube",
+      linkicon: null,
+      link: null,
+      buttonclass: null,
+      buttontext: "",
+    },
+  ];
+
   return (
     <React.Fragment>
       {[
         <div className="section-body">
           <Parallax
-            pages={7}
+            pages={10.5}
             id="para-cont"
             ref={(el) => {
               paraContainer = el;
             }}
           >
-            <ParallaxLayer offset={2.88} speed={0.5} className="no-show-mobile">
+            {/* Lightbulb */}
+            <ParallaxLayer offset={2.88} speed={0.5}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="bulb"
@@ -270,6 +398,7 @@ const ParallaxSection = () => {
               </svg>
             </ParallaxLayer>
 
+            {/* Soil */}
             <ParallaxLayer
               offset={1.8}
               speed={0.5}
@@ -281,6 +410,7 @@ const ParallaxSection = () => {
               factor={1.8}
             ></ParallaxLayer>
 
+            {/* Cover Section */}
             <ParallaxLayer
               offset={0}
               speed={0}
@@ -320,6 +450,7 @@ const ParallaxSection = () => {
               </div>
             </ParallaxLayer>
 
+            {/* Cool guy parralax img */}
             <ParallaxLayer
               offset={2.99}
               speed={0.1}
@@ -339,271 +470,109 @@ const ParallaxSection = () => {
               />
             </ParallaxLayer>
 
+            {/* Stack and projects */}
             <ParallaxLayer
-              offset={3}
+              offset={3.2}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
+                backgroundColor: "black",
               }}
-              factor={1.8}
+              factor={1.6}
             >
               <div ref={contentGrid} className="row content-grid">
                 <h1 className="center">Stack and Projects</h1>
 
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="python logo"
-                        src={pythonlogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>Python</h5>
+                {gridcolumns.map((item, index) => {
+                  return (
+                    <div className={item.column} key={index}>
+                      <div className={item.cubeclass} onClick={ToggleClass}>
+                        <div className="flippety">
+                          <img
+                            className="grid-image-para"
+                            alt={item.title}
+                            src={item.icon}
+                          ></img>
+                          <div className="text-cont">
+                            <h5>{item.title}</h5>
+                          </div>
+                        </div>
+                        <div className="flop">
+                          <img
+                            className="grid-image-inside"
+                            alt={item.insideText}
+                            src={item.insideIcon}
+                          ></img>
+                          <p>{item.insideText}</p>
+                          <a
+                            className={item.buttonclass}
+                            href={item.link}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <i className="material-icons left">
+                              {item.linkicon}
+                            </i>
+                            {item.buttontext}
+                          </a>
+                        </div>
                       </div>
                     </div>
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="map"
-                        src={map}
-                      ></img>
-                      <p>
-                        Punggol Mapper: A Data Structure and Algorithms Project
-                      </p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=r3Jpb537km0"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <img
-                    className="grid-image-para"
-                    alt="java logo"
-                    src={javalogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Java</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="c logo"
-                        src={clogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>C</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="chip"
-                        src={chip}
-                      ></img>
-                      <p>Embedded Voice Controlled Door Lock</p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=QSWcDVKVmMI"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l3">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="kotlin logo"
-                        src={kotlinlogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>Kotlin</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="map"
-                        src={map}
-                      ></img>
-                      <p>WHALK: An Android Mobile Development Project</p>
-                      <a
-                        className="waves-effect waves-light btn red"
-                        href="https://www.youtube.com/watch?v=DJ_jqPybkhw"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">play_arrow</i>Video
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <img
-                    className="grid-image-para"
-                    alt="web technologies"
-                    src={webtechlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Web Techs</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <div
-                    className={
-                      (isActive ? "cube" : "cube active") +
-                      (isMobile ? " mobile" : "")
-                    }
-                    onClick={ToggleClass}
-                  >
-                    <div className="flippety">
-                      <img
-                        className="grid-image-para"
-                        alt="wordpress"
-                        src={wplogo}
-                      ></img>
-                      <div className="text-cont">
-                        <h5>WordPress</h5>
-                      </div>
-                    </div>
-
-                    <div className="flop">
-                      <img
-                        className="grid-image-inside"
-                        alt="content management system"
-                        src={cms}
-                      ></img>
-                      <p>Better World Singapore Portal</p>
-                      <a
-                        className="waves-effect waves-light btn green"
-                        href="https://scout.betterworld.sg/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <i className="material-icons left">location_on</i>Visit
-                        Site!
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l4">
-                  <img
-                    className="grid-image-para"
-                    alt="react logo"
-                    src={reactlogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>React</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l6">
-                  <img
-                    className="grid-image-para"
-                    alt="node logo"
-                    src={nodelogo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>Node.js</h5>
-                  </div>
-                </div>
-
-                <div className="col s6 m6 l6">
-                  <img
-                    className="grid-image-para"
-                    alt="mongo logo"
-                    src={mongologo}
-                  ></img>
-                  <div className="text-cont">
-                    <h5>MongoDB</h5>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </ParallaxLayer>
 
+            {/* Portfolio Item - 5 */}
             <ParallaxLayer
-              offset={4.9}
+              offset={5}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundImage: `url(${webdev})`,
-                backgroundSize: "auto 60%",
-                backgroundColor: "#121212",
+                backgroundColor: "red",
+                position: "relative",
+                height: "150vh",
               }}
-              className="div-background para-mobile-fix"
+              className="para-mobile-fix"
             >
-              <div className="right-cont">
-                <h2>This Portfolio Project is built with</h2>
-                <div className="row">
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="web technologies"
-                      src={webtechlogo}
-                    ></img>
-                  </div>
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="react logo"
-                      src={reactlogo}
-                    ></img>
-                  </div>
-                  <div className="col s4 m4 l4">
-                    <img
-                      className="grid-image-para"
-                      alt="node logo"
-                      src={nodelogo}
-                    ></img>
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
                   </div>
                 </div>
               </div>
             </ParallaxLayer>
 
+            {/* Soil 4.8 */}
             <ParallaxLayer
-              offset={4.35}
+              offset={4.7}
               speed={0.5}
               style={{
                 backgroundSize: "cover",
@@ -614,22 +583,52 @@ const ParallaxSection = () => {
               factor={1.1}
             ></ParallaxLayer>
 
+            {/* Portfolio Item 5.1 */}
             <ParallaxLayer
-              offset={6}
+              offset={5.1}
               speed={0}
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
+                backgroundColor: "green",
+                position: "relative",
+                height: "150vh",
               }}
-              className="para-mobile-fix"
             >
-              <div className="end-para">
-                <p className="center-align">
-                  Made with <i class="material-icons">mood</i>
-                </p>
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
               </div>
             </ParallaxLayer>
 
+            {/* Soil 6 */}
             <ParallaxLayer
               offset={6}
               speed={0.5}
@@ -638,7 +637,97 @@ const ParallaxSection = () => {
                 backgroundImage: `url(${soil})`,
                 backgroundPosition: "50% 50%",
               }}
-              factor={0.8}
+              className="no-show-mobile"
+              factor={1.1}
+            ></ParallaxLayer>
+
+            {/* Portfolio Ending Item 5.2 */}
+            <ParallaxLayer
+              offset={5.2}
+              speed={0}
+              style={{
+                color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "blue",
+                position: "relative",
+                height: "150vh",
+              }}
+            >
+              <div className="row height-fix center">
+                <div className="col s12 m6 l6">
+                  <img src={webdev} className="grid-image-big"></img>
+                </div>
+                <div className="col s12 m6 l6 ">
+                  <h4>This Portfolio Project is built with</h4>
+                  <div className="row">
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="web technologies"
+                        src={webtechlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="react logo"
+                        src={reactlogo}
+                      ></img>
+                    </div>
+                    <div className="col s4 m4 l4">
+                      <img
+                        className="grid-image-para"
+                        alt="node logo"
+                        src={nodelogo}
+                      ></img>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ParallaxLayer>
+
+            {/* Soil 7.9 */}
+            <ParallaxLayer
+              offset={7.9}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={1.1}
+              className="no-show-mobile"
+            ></ParallaxLayer>
+
+            {/* Ending made with smiles 5.25*/}
+            <ParallaxLayer
+              offset={5.25}
+              speed={0}
+              style={{
+                color: "white",
+                transition: "all 0.1s ease",
+                backgroundColor: "brown",
+                position: "relative",
+                height: "80vh",
+              }}
+            >
+              <div className="end-para">
+                <p className="center-align">
+                  Made with <i className="material-icons">mood</i>
+                </p>
+              </div>
+            </ParallaxLayer>
+
+            {/* Soil 9.5 */}
+            <ParallaxLayer
+              offset={9.5}
+              speed={0.5}
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url(${soil})`,
+                backgroundPosition: "50% 50%",
+              }}
+              factor={1.1}
               className="no-show-mobile"
             ></ParallaxLayer>
           </Parallax>

@@ -39,6 +39,7 @@ const App = () => {
     <>
       <NavBar />
       <main
+        id="main-cont"
         className="content-container"
         onClick={menuButtonClickMain.bind(this)}
       >

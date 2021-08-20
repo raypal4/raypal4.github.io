@@ -58,7 +58,7 @@ const NavBar = () => {
     <ThemeProvider theme={themeMode}>
       <>
         <GlobalStyles />
-        <div className="side-bar z-depth-1">
+        <div className="side-bar z-depth-1" id="navbar">
           <div className="logo-content">
             <div className="logo">
               <div className="row">
