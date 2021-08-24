@@ -266,6 +266,12 @@ const ParallaxSection = () => {
     },
   ];
 
+  const pages = [
+    "https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  ];
+
   return (
     <React.Fragment>
       {[
@@ -532,7 +538,7 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "red",
+                backgroundColor: "black",
                 position: "relative",
                 height: "150vh",
               }}
@@ -541,7 +547,7 @@ const ParallaxSection = () => {
               <div className="row height-fix center">
                 <div className="col s12 m6 l6">
                   <div className="min-height">
-                    <ImageSlider />
+                    <ImageSlider pages={pages} />
                   </div>
                 </div>
                 <div className="col s12 m6 l6 ">
@@ -593,14 +599,16 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "green",
+                backgroundColor: "black",
                 position: "relative",
                 height: "150vh",
               }}
             >
               <div className="row height-fix center">
                 <div className="col s12 m6 l6">
-                  <img src={webdev} className="grid-image-big"></img>
+                  <div className="min-height">
+                    <ImageSlider pages={pages} />
+                  </div>
                 </div>
                 <div className="col s12 m6 l6 ">
                   <h4>This Portfolio Project is built with</h4>
@@ -651,7 +659,7 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "blue",
+                backgroundColor: "black",
                 position: "relative",
                 height: "150vh",
               }}

@@ -5,17 +5,11 @@ import { useDrag } from "react-use-gesture";
 import clamp from "lodash.clamp";
 import styles from "./styles.module.css";
 
-export const ImageSlider = () => {
-  const pages = [
-    "https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    "https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    "https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  ];
-
+export function ImageSlider(prop) {
   const index = useRef(0);
   const [ref, { width }] = useMeasure();
   const [props, api] = useSprings(
-    pages.length,
+    prop.pages.length,
     (i) => ({
       x: i * width,
       scale: width === 0 ? 0 : 1,
@@ -30,7 +24,7 @@ export const ImageSlider = () => {
         index.current = clamp(
           index.current + (xDir > 0 ? -1 : 1),
           0,
-          pages.length - 1
+          prop.pages.length - 1
         );
         cancel();
       }
@@ -56,7 +50,10 @@ export const ImageSlider = () => {
               style={{ display, x }}
             >
               <animated.div
-                style={{ scale, backgroundImage: `url(${pages[i]})` }}
+                style={{
+                  scale,
+                  backgroundImage: `url(${prop.pages[i]})`,
+                }}
               />
             </animated.div>
           ))}
@@ -64,4 +61,4 @@ export const ImageSlider = () => {
       </div>
     </React.Fragment>
   );
-};
+}
