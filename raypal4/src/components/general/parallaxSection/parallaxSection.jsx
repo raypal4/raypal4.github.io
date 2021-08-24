@@ -553,7 +553,7 @@ const ParallaxSection = () => {
                 </div>
                 <div className="col s12 m5 l4 ">
                   <div className="exp-cont">
-                    <h3>Travallo - An image based travel planner</h3>
+                    <h3>Travallo</h3>
                     <p>
                       An instagram inspired travel planner concept where liked
                       images are converted to potential travel activies. The
@@ -620,7 +620,7 @@ const ParallaxSection = () => {
                 </div>
                 <div className="col s12 m5 l4 ">
                   <div className="exp-cont">
-                    <h3>Travallo - An image based travel planner</h3>
+                    <h3>Travallo</h3>
                     <p>
                       An instagram inspired travel planner concept where liked
                       images are converted to potential travel activies. The
