@@ -26,6 +26,14 @@ import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
 
+import travallofront from "./travallo/travallo_front.png";
+import travallo1 from "./travallo/travallo_1.png";
+import travallo2 from "./travallo/travallo_2.png";
+import travallo3 from "./travallo/travallo_3.png";
+import travallo4 from "./travallo/travallo_4.png";
+
+import { ImageSlider } from "../imageSlider/imageSlider.jsx";
+
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
   var lightisON = false;
@@ -264,6 +272,8 @@ const ParallaxSection = () => {
     },
   ];
 
+  const travallo = [travallofront, travallo1, travallo2, travallo3, travallo4];
+
   return (
     <React.Fragment>
       {[
@@ -477,7 +487,6 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "black",
               }}
               factor={1.6}
             >
@@ -531,19 +540,28 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "red",
                 position: "relative",
                 height: "150vh",
               }}
               className="para-mobile-fix"
             >
-              <div className="row height-fix center">
-                <div className="col s12 m6 l6">
-                  <img src={webdev} className="grid-image-big"></img>
+              <div className="row height-fix">
+                <div className="col s12 m7 l8">
+                  <div className="min-height">
+                    <ImageSlider pages={travallo} />
+                  </div>
                 </div>
-                <div className="col s12 m6 l6 ">
-                  <h4>This Portfolio Project is built with</h4>
-                  <div className="row">
+                <div className="col s12 m5 l4 ">
+                  <div className="exp-cont">
+                    <h3>Travallo</h3>
+                    <p>
+                      An instagram inspired travel planner concept where liked
+                      images are converted to potential travel activies. The
+                      project is built on Flask and the usual web technologies
+                      with MongoDB as its database solution.
+                    </p>
+                  </div>
+                  <div className="row center">
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
@@ -554,15 +572,15 @@ const ParallaxSection = () => {
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
-                        alt="react logo"
-                        src={reactlogo}
+                        alt="python logo"
+                        src={pythonlogo}
                       ></img>
                     </div>
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
-                        alt="node logo"
-                        src={nodelogo}
+                        alt="mongodb logo"
+                        src={mongologo}
                       ></img>
                     </div>
                   </div>
@@ -590,18 +608,27 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "green",
                 position: "relative",
                 height: "150vh",
               }}
             >
-              <div className="row height-fix center">
-                <div className="col s12 m6 l6">
-                  <img src={webdev} className="grid-image-big"></img>
+              <div className="row height-fix">
+                <div className="col s12 m7 l8">
+                  <div className="min-height">
+                    <ImageSlider pages={travallo} />
+                  </div>
                 </div>
-                <div className="col s12 m6 l6 ">
-                  <h4>This Portfolio Project is built with</h4>
-                  <div className="row">
+                <div className="col s12 m5 l4 ">
+                  <div className="exp-cont">
+                    <h3>Travallo</h3>
+                    <p>
+                      An instagram inspired travel planner concept where liked
+                      images are converted to potential travel activies. The
+                      project is built on Flask and the usual web technologies
+                      with MongoDB as its database solution.
+                    </p>
+                  </div>
+                  <div className="row center">
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
@@ -612,15 +639,15 @@ const ParallaxSection = () => {
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
-                        alt="react logo"
-                        src={reactlogo}
+                        alt="python logo"
+                        src={pythonlogo}
                       ></img>
                     </div>
                     <div className="col s4 m4 l4">
                       <img
                         className="grid-image-para"
-                        alt="node logo"
-                        src={nodelogo}
+                        alt="MongoDB logo"
+                        src={mongologo}
                       ></img>
                     </div>
                   </div>
@@ -648,14 +675,17 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "blue",
                 position: "relative",
                 height: "150vh",
               }}
             >
               <div className="row height-fix center">
                 <div className="col s12 m6 l6">
-                  <img src={webdev} className="grid-image-big"></img>
+                  <img
+                    src={webdev}
+                    alt="web dev"
+                    className="grid-image-big"
+                  ></img>
                 </div>
                 <div className="col s12 m6 l6 ">
                   <h4>This Portfolio Project is built with</h4>
