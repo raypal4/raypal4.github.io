@@ -117,7 +117,7 @@
 }
 
 .grid-image-para {
-  height: 100px;
+  height: 80px;
 }
 
 .grid-image-big {
@@ -127,9 +127,15 @@
 .height-fix {
   position: absolute;
   height: 100%;
-  top: 40%;
-  left: 10%;
-  width: 80%;
+  top: 30%;
+  left: 5%;
+  width: 90%;
+}
+
+.exp-cont {
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 /* icon scroll */
@@ -252,6 +258,43 @@
   fill: #d1d3d4;
 }
 
+@media (max-width: 1000px) {
+  .cover-background {
+    height: 100vh;
+    background-position: 50% 0%;
+  }
+  .cover-foreground {
+    background-position: 50% 0%;
+  }
+  .cover-title .sub {
+    width: 50%;
+  }
+
+  .content-grid .grid-image-para {
+    height: 80px;
+  }
+
+  .height-fix {
+    top: 25%;
+    left: 0%;
+    width: 100%;
+  }
+
+  #para-cont::-webkit-scrollbar {
+    display: auto;
+  }
+
+  #bulb {
+    width: 15%;
+    margin-left: 43%;
+    margin-top: 70px;
+  }
+
+  .grid-image-para {
+    height: 50px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .cover-background {
     height: 100vh;
@@ -262,7 +305,7 @@
   }
 
   .cover-title .sub {
-    width: 80% !important;
+    width: 80%;
   }
 
   .content-grid {
@@ -281,46 +324,21 @@
   }
 
   .height-fix {
-    top: 20% !important;
+    top: 20%;
     left: 0%;
   }
 
   #bulb {
     width: 20%;
     margin-left: 40%;
-    margin-top: 70px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .cover-background {
-    height: 100vh;
-    background-position: 50% 0%;
-  }
-  .cover-foreground {
-    background-position: 50% 0%;
-  }
-  .cover-title .sub {
-    width: 50%;
+    margin-top: 80px;
   }
 
-  .content-grid .grid-image-para {
-    height: 80px;
+  .min-height {
+    min-height: 80px;
   }
 
-  .height-fix {
-    top: 30%;
-    left: 0%;
-    width: 100%;
-  }
-
-  #para-cont::-webkit-scrollbar {
-    display: auto;
-  }
-
-  #bulb {
-    width: 15%;
-    margin-left: 43%;
-    margin-top: 70px;
+  .grid-image-para {
+    height: 50px;
   }
 }
