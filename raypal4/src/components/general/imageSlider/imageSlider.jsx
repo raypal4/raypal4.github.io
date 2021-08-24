@@ -1,7 +1,7 @@
-import React, { Component, useRef } from "react";
+import React, { useRef } from "react";
 import { useSprings, animated } from "@react-spring/web";
 import useMeasure from "react-use-measure";
-import { useDrag } from "react-use-gesture";
+import { useGesture } from "react-use-gesture";
 import clamp from "lodash.clamp";
 import styles from "./styles.module.css";
 
@@ -18,8 +18,15 @@ export function ImageSlider(prop) {
     [width]
   );
 
-  const bind = useDrag(
-    ({ active, movement: [mx], direction: [xDir], distance, cancel }) => {
+  const bind = useGesture({
+    onDrag: ({
+      active,
+      movement: [mx],
+      direction: [xDir],
+      distance,
+      hovering,
+      cancel,
+    }) => {
       if (active && distance > width / 2) {
         index.current = clamp(
           index.current + (xDir > 0 ? -1 : 1),
@@ -35,8 +42,9 @@ export function ImageSlider(prop) {
         const scale = active ? 1 - distance / width / 2 : 1;
         return { x, scale, display: "block" };
       });
-    }
-  );
+    },
+    onHover: (state) => void 0,
+  });
 
   return (
     <React.Fragment>
