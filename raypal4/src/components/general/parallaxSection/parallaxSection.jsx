@@ -26,6 +26,8 @@ import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
 
+import { ImageSlider } from "../imageSlider/imageSlider.jsx";
+
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
   var lightisON = false;
@@ -477,7 +479,6 @@ const ParallaxSection = () => {
               style={{
                 color: "white",
                 transition: "all 0.1s ease",
-                backgroundColor: "black",
               }}
               factor={1.6}
             >
@@ -539,7 +540,9 @@ const ParallaxSection = () => {
             >
               <div className="row height-fix center">
                 <div className="col s12 m6 l6">
-                  <img src={webdev} className="grid-image-big"></img>
+                  <div className="min-height">
+                    <ImageSlider />
+                  </div>
                 </div>
                 <div className="col s12 m6 l6 ">
                   <h4>This Portfolio Project is built with</h4>

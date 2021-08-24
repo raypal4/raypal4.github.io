@@ -290,6 +290,10 @@
     margin-left: 40%;
     margin-top: 70px;
   }
+
+  .min-height {
+    min-height: 350px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -309,7 +313,7 @@
   }
 
   .height-fix {
-    top: 30%;
+    top: 40%;
     left: 0%;
     width: 100%;
   }

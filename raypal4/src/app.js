@@ -6,7 +6,6 @@ import InstaPiano from "./pages/instapiano.jsx";
 import { Route, useLocation } from "react-router-dom";
 import { Switch } from "react-router";
 import { useTransition, animated } from "react-spring";
-import BB8 from "./components/general/bb8/bb8Loader.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -43,10 +42,6 @@ const App = () => {
         className="content-container"
         onClick={menuButtonClickMain.bind(this)}
       >
-        {/* <div className="background-loader">
-          <BB8 />
-          <div className="sand" />
-        </div> */}
         {transitions((props, item, key) => (
           <animated.div key={key} style={props}>
             <Switch location={item}>
