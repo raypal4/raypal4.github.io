@@ -49,7 +49,7 @@ body {
 }
 
 .side-bar.active {
-  width: 240px;
+  width: 240px !important;
 }
 
 .side-bar .logo-content .logo {
@@ -204,8 +204,8 @@ body {
 }
 
 .side-bar.active ~ .content-container {
-  width: calc(100% - 240px);
-  left: 240px;
+  width: calc(100% - 240px) !important;
+  left: 240px !important;
 }
 
 .display-none {
