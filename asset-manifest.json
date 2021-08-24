@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.4b3884ae.chunk.css",
-    "main.js": "/static/js/main.8a4b625d.chunk.js",
-    "main.js.map": "/static/js/main.8a4b625d.chunk.js.map",
+    "main.css": "/static/css/main.4c26acc3.chunk.css",
+    "main.js": "/static/js/main.e17d04d8.chunk.js",
+    "main.js.map": "/static/js/main.e17d04d8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.12f1502e.js",
     "runtime-main.js.map": "/static/js/runtime-main.12f1502e.js.map",
-    "static/js/2.91c29318.chunk.js": "/static/js/2.91c29318.chunk.js",
-    "static/js/2.91c29318.chunk.js.map": "/static/js/2.91c29318.chunk.js.map",
+    "static/js/2.3052f03d.chunk.js": "/static/js/2.3052f03d.chunk.js",
+    "static/js/2.3052f03d.chunk.js.map": "/static/js/2.3052f03d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.4b3884ae.chunk.css.map": "/static/css/main.4b3884ae.chunk.css.map",
-    "static/js/2.91c29318.chunk.js.LICENSE.txt": "/static/js/2.91c29318.chunk.js.LICENSE.txt",
+    "static/css/main.4c26acc3.chunk.css.map": "/static/css/main.4c26acc3.chunk.css.map",
+    "static/js/2.3052f03d.chunk.js.LICENSE.txt": "/static/js/2.3052f03d.chunk.js.LICENSE.txt",
     "static/media/C.7d47ceef.svg": "/static/media/C.7d47ceef.svg",
     "static/media/MongoDB.90f9478c.svg": "/static/media/MongoDB.90f9478c.svg",
     "static/media/RT.2c28db7c.svg": "/static/media/RT.2c28db7c.svg",
@@ -29,14 +29,19 @@
     "static/media/python.6a8b2999.svg": "/static/media/python.6a8b2999.svg",
     "static/media/react.6c1d44b8.svg": "/static/media/react.6c1d44b8.svg",
     "static/media/soil.6eed77a6.svg": "/static/media/soil.6eed77a6.svg",
+    "static/media/travallo_1.6eb3181c.png": "/static/media/travallo_1.6eb3181c.png",
+    "static/media/travallo_2.c8be727b.png": "/static/media/travallo_2.c8be727b.png",
+    "static/media/travallo_3.f40e7f8c.png": "/static/media/travallo_3.f40e7f8c.png",
+    "static/media/travallo_4.7eb69b0e.png": "/static/media/travallo_4.7eb69b0e.png",
+    "static/media/travallo_front.bddb1a43.png": "/static/media/travallo_front.bddb1a43.png",
     "static/media/web-dev.26513561.svg": "/static/media/web-dev.26513561.svg",
     "static/media/webTech.fba67efa.svg": "/static/media/webTech.fba67efa.svg",
     "static/media/wordpress.460f6f16.svg": "/static/media/wordpress.460f6f16.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.12f1502e.js",
-    "static/js/2.91c29318.chunk.js",
-    "static/css/main.4b3884ae.chunk.css",
-    "static/js/main.8a4b625d.chunk.js"
+    "static/js/2.3052f03d.chunk.js",
+    "static/css/main.4c26acc3.chunk.css",
+    "static/js/main.e17d04d8.chunk.js"
   ]
 }
