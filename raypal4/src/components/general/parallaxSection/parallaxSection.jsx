@@ -543,6 +543,7 @@ const ParallaxSection = () => {
                 position: "relative",
                 height: "150vh",
               }}
+              className="para-mobile-fix"
             >
               <div className="row height-fix">
                 <div className="col s12 m7 l8">
@@ -610,6 +611,7 @@ const ParallaxSection = () => {
                 position: "relative",
                 height: "150vh",
               }}
+              className="para-mobile-fix"
             >
               <div className="row height-fix">
                 <div className="col s12 m7 l8">
@@ -677,6 +679,7 @@ const ParallaxSection = () => {
                 position: "relative",
                 height: "150vh",
               }}
+              className="para-mobile-fix"
             >
               <div className="row height-fix center">
                 <div className="col s12 m6 l6">
