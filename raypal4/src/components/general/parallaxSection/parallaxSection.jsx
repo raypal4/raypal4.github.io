@@ -543,7 +543,6 @@ const ParallaxSection = () => {
                 position: "relative",
                 height: "150vh",
               }}
-              className="para-mobile-fix"
             >
               <div className="row height-fix">
                 <div className="col s12 m7 l8">
