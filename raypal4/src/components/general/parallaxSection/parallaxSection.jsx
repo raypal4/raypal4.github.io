@@ -41,6 +41,7 @@ import hnh4 from "./hnh/hnh4.png";
 import hnh5 from "./hnh/hnh5.png";
 
 import { ImageSlider } from "../imageSlider/imageSlider.jsx";
+import { FlipGrid } from "../flipGrid/flipGrid.jsx";
 
 const ParallaxSection = () => {
   const [divScale, setdivScale] = useState(1);
@@ -101,11 +102,6 @@ const ParallaxSection = () => {
   });
 
   const [isActive, setActive] = useState("false");
-  const ToggleClass = () => {
-    if (!isMobile) {
-      setActive(!isActive);
-    }
-  };
 
   function reverser(input, valuetoreverse, reversehowmuch) {
     if (input < valuetoreverse) {
@@ -502,43 +498,12 @@ const ParallaxSection = () => {
               <div ref={contentGrid} className="row content-grid">
                 <h1 className="center">Stack and Projects</h1>
 
-                {gridcolumns.map((item, index) => {
-                  return (
-                    <div className={item.column} key={index}>
-                      <div className={item.cubeclass} onClick={ToggleClass}>
-                        <div className="flippety">
-                          <img
-                            className="grid-image-para"
-                            alt={item.title}
-                            src={item.icon}
-                          ></img>
-                          <div className="text-cont">
-                            <h5>{item.title}</h5>
-                          </div>
-                        </div>
-                        <div className="flop">
-                          <img
-                            className="grid-image-inside"
-                            alt={item.insideText}
-                            src={item.insideIcon}
-                          ></img>
-                          <p>{item.insideText}</p>
-                          <a
-                            className={item.buttonclass}
-                            href={item.link}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <i className="material-icons left">
-                              {item.linkicon}
-                            </i>
-                            {item.buttontext}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                <FlipGrid
+                  gridcolumns={gridcolumns}
+                  isMobile={isMobile}
+                  setActive={setActive}
+                  isActive={isActive}
+                />
               </div>
             </ParallaxLayer>
 
