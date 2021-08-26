@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b3a0cd2.chunk.css",
-    "main.js": "/static/js/main.c7c6fc3b.chunk.js",
-    "main.js.map": "/static/js/main.c7c6fc3b.chunk.js.map",
+    "main.css": "/static/css/main.37ef95e4.chunk.css",
+    "main.js": "/static/js/main.dc18fb35.chunk.js",
+    "main.js.map": "/static/js/main.dc18fb35.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.12f1502e.js",
     "runtime-main.js.map": "/static/js/runtime-main.12f1502e.js.map",
     "static/js/2.3052f03d.chunk.js": "/static/js/2.3052f03d.chunk.js",
     "static/js/2.3052f03d.chunk.js.map": "/static/js/2.3052f03d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.3b3a0cd2.chunk.css.map": "/static/css/main.3b3a0cd2.chunk.css.map",
+    "static/css/main.37ef95e4.chunk.css.map": "/static/css/main.37ef95e4.chunk.css.map",
     "static/js/2.3052f03d.chunk.js.LICENSE.txt": "/static/js/2.3052f03d.chunk.js.LICENSE.txt",
     "static/media/C.7d47ceef.svg": "/static/media/C.7d47ceef.svg",
     "static/media/MongoDB.90f9478c.svg": "/static/media/MongoDB.90f9478c.svg",
@@ -41,7 +41,7 @@
   "entrypoints": [
     "static/js/runtime-main.12f1502e.js",
     "static/js/2.3052f03d.chunk.js",
-    "static/css/main.3b3a0cd2.chunk.css",
-    "static/js/main.c7c6fc3b.chunk.js"
+    "static/css/main.37ef95e4.chunk.css",
+    "static/js/main.dc18fb35.chunk.js"
   ]
 }
