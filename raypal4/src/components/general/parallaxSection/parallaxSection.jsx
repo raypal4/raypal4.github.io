@@ -25,12 +25,20 @@ import wplogo from "./logos/wordpress.svg";
 import mongologo from "./logos/MongoDB.svg";
 import nodelogo from "./logos/nodejs.svg";
 import reactlogo from "./logos/react.svg";
+import gluonlogo from "./logos/gluon-logo.svg";
+import mxnetlogo from "./logos/mxnet_logo.png";
 
 import travallofront from "./travallo/travallo_front.png";
 import travallo1 from "./travallo/travallo_1.png";
 import travallo2 from "./travallo/travallo_2.png";
 import travallo3 from "./travallo/travallo_3.png";
 import travallo4 from "./travallo/travallo_4.png";
+
+import hnh1 from "./hnh/hnh1.png";
+import hnh2 from "./hnh/hnh2.png";
+import hnh3 from "./hnh/hnh3.png";
+import hnh4 from "./hnh/hnh4.png";
+import hnh5 from "./hnh/hnh5.png";
 
 import { ImageSlider } from "../imageSlider/imageSlider.jsx";
 
@@ -273,6 +281,7 @@ const ParallaxSection = () => {
   ];
 
   const travallo = [travallofront, travallo1, travallo2, travallo3, travallo4];
+  const hnh = [hnh1, hnh2, hnh3, hnh4, hnh5];
 
   return (
     <React.Fragment>
@@ -614,41 +623,42 @@ const ParallaxSection = () => {
               className="para-mobile-fix"
             >
               <div className="row height-fix">
-                <div className="col s12 m7 l8">
+                <div className="col s12 m7 l7">
                   <div className="min-height">
-                    <ImageSlider pages={travallo} />
+                    <ImageSlider pages={hnh} />
                   </div>
                 </div>
-                <div className="col s12 m5 l4 ">
+                <div className="col s12 m5 l5 ">
                   <div className="exp-cont">
-                    <h3>Travallo</h3>
+                    <h3>Hotdog not Hotdog</h3>
                     <p>
-                      An instagram inspired travel planner concept where liked
-                      images are converted to potential travel activies. The
-                      project is built on Flask and the usual web technologies
-                      with MongoDB as its database solution.
+                      Computer vision project inspired by the comedy Silicon
+                      Valley where one of the characters made a AI project that
+                      detects if an object is a hotodog or not. After watching
+                      that, i decided to try it on my own!
                     </p>
                   </div>
                   <div className="row center">
-                    <div className="col s4 m4 l4">
+                    <div className="col s6 m6 l6">
                       <img
                         className="grid-image-para"
-                        alt="web technologies"
-                        src={webtechlogo}
+                        alt="mxnet logo"
+                        src={mxnetlogo}
                       ></img>
                     </div>
-                    <div className="col s4 m4 l4">
+                    <div className="col s6 m6 l6">
                       <img
                         className="grid-image-para"
                         alt="python logo"
                         src={pythonlogo}
                       ></img>
                     </div>
-                    <div className="col s4 m4 l4">
+
+                    <div className="col s12 m12 l12">
                       <img
                         className="grid-image-para"
-                        alt="MongoDB logo"
-                        src={mongologo}
+                        alt="gluon cv logo"
+                        src={gluonlogo}
                       ></img>
                     </div>
                   </div>
