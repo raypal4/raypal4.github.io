@@ -334,7 +334,7 @@
 
   #bulb {
     width: 30%;
-    margin-left: 40%;
+    margin-left: 35%;
     margin-top: 100px;
   }
 
@@ -351,6 +351,10 @@
   }
 
   .para-mobile-fix {
-    height: 100vh !important;
+  }
+
+  .soil-mobile-fix {
+    height: 500px !important;
+    margin-top: 900px !important;
   }
 }
