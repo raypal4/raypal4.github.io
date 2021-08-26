@@ -187,41 +187,6 @@
   }
 }
 
-.cube {
-  height: 100%;
-  -webkit-transition: -webkit-transform 0.33s;
-  transition: transform 0.33s; /* Animate the transform properties */
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d; /* <-NB */
-}
-
-/* Position the faces */
-.flippety {
-  height: 100%;
-  -webkit-transform: translateZ(100px);
-  transform: translateZ(100px);
-  cursor: pointer;
-}
-
-.flop {
-  width: 100%;
-  padding: 20px;
-  cursor: pointer;
-  -webkit-transform: rotateX(-90deg) translateZ(-100px);
-  transform: rotateX(-90deg) translateZ(-100px);
-}
-
-/* Rotate the cube */
-.cube.active {
-  -webkit-transform: rotateX(90deg);
-  transform: rotateX(90deg); /* Text bleed at 90º */
-}
-
-.cube.mobile:hover {
-  -webkit-transform: rotateX(90deg);
-  transform: rotateX(90deg); /* Text bleed at 90º */
-}
-
 /* bulb */
 #bulb {
   width: 10%;
@@ -349,9 +314,6 @@
 
   .exp-cont h3 {
     padding-top: 0;
-  }
-
-  .para-mobile-fix {
   }
 
   .soil-mobile-fix {
