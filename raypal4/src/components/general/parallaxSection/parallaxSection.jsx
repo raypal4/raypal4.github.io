@@ -597,8 +597,8 @@ const ParallaxSection = () => {
                 backgroundImage: `url(${soil})`,
                 backgroundPosition: "50% 50%",
               }}
-              className="no-show-mobile"
               factor={1.1}
+              className="soil-mobile-fix"
             ></ParallaxLayer>
 
             {/* Portfolio Item 5.1 */}
@@ -665,7 +665,7 @@ const ParallaxSection = () => {
                 backgroundImage: `url(${soil})`,
                 backgroundPosition: "50% 50%",
               }}
-              className="no-show-mobile"
+              className="soil-mobile-fix"
               factor={1.1}
             ></ParallaxLayer>
 
@@ -728,7 +728,7 @@ const ParallaxSection = () => {
                 backgroundPosition: "50% 50%",
               }}
               factor={1.1}
-              className="no-show-mobile"
+              className="soil-mobile-fix"
             ></ParallaxLayer>
 
             {/* Ending made with smiles 5.25*/}
