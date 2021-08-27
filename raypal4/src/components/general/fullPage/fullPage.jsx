@@ -17,6 +17,7 @@ import hnh2 from "../parallaxSection/hnh/hnh2.png";
 import hnh3 from "../parallaxSection/hnh/hnh3.png";
 import hnh4 from "../parallaxSection/hnh/hnh4.png";
 import hnh5 from "../parallaxSection/hnh/hnh5.png";
+import hnh6 from "../parallaxSection/hnh/hnh6.png";
 
 import webdev from "../parallaxSection//illustrations/web-dev.svg";
 
@@ -106,7 +107,7 @@ export const FullPage = () => {
     logos: [mxnetlogo, pythonlogo, gluonlogo],
     logoAlt: ["mxnetlogo", "pythonlogo", "gluonlogo"],
     logoColClass: ["col s6 m6 l6", "col s6 m6 l6", "col s12 m12 l12"],
-    images: [hnh1, hnh2, hnh3, hnh4, hnh5],
+    images: [hnh1, hnh2, hnh3, hnh4, hnh5, hnh6],
   };
 
   return (
