@@ -6,6 +6,7 @@ import InstaPiano from "./pages/instapiano.jsx";
 import { Route, useLocation } from "react-router-dom";
 import { Switch } from "react-router";
 import { useTransition, animated } from "react-spring";
+import Projects from "./pages/projects.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -48,6 +49,7 @@ const App = () => {
               <Route path="/" exact component={HomePage}></Route>
               <Route path="/about" exact component={About}></Route>
               <Route path="/music" exact component={InstaPiano}></Route>
+              <Route path="/projects" exact component={Projects}></Route>
             </Switch>
           </animated.div>
         ))}

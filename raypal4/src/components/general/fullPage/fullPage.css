@@ -1,0 +1,49 @@
+#fp-nav {
+  top: 10%;
+}
+
+.fullpage-cont {
+  position: relative;
+}
+
+.fullpage-cont .section {
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fullpage-cont .image-slider-fix {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 100%;
+}
+
+.fullpage-cont .content-cont {
+  margin-top: 90px;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+@media (max-width: 1000px) {
+  .fullpage-cont .content-cont {
+    margin-top: 200px;
+    padding: 0px;
+  }
+
+  .fullpage-cont .image-slider-fix {
+    top: 20%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .fullpage-cont .image-slider-fix {
+    position: relative;
+  }
+
+  .fullpage-cont .content-cont {
+    margin-top: 0px;
+    padding: 0px;
+  }
+}
