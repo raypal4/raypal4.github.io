@@ -3,7 +3,6 @@ import "./flipGrid.css";
 
 export function FlipGrid(props) {
   const ToggleClass = () => {
-    console.log("WOI");
     if (!props.isMobile) {
       props.setActive(!props.isActive);
     }

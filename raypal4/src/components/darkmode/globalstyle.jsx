@@ -64,4 +64,8 @@ export const GlobalStyles = createGlobalStyle`
   .section-body{
     background: ${({ theme }) => theme.body};
   } 
+
+  .fullpage-cont .content-grid .col {
+    border: 1px solid ${({ theme }) => theme.text};
+  }
   `;
