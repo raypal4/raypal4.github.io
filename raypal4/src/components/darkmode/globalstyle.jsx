@@ -29,19 +29,19 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
   }
 
-  .grid-title{
+  .home-body .grid-title{
     color: ${({ theme }) => theme.gridtext};
   }
   
-  .grid-1 {
+  .home-body .grid-1 {
     background: ${({ theme }) => theme.grid1};
   }
   
-  .grid-2 {
+  .home-body .grid-2 {
     background: ${({ theme }) => theme.grid2};
   }
   
-  .grid-3 {
+  .home-body .grid-3 {
     background: ${({ theme }) => theme.grid3};
   }
 
@@ -64,4 +64,8 @@ export const GlobalStyles = createGlobalStyle`
   .section-body{
     background: ${({ theme }) => theme.body};
   } 
+
+  .fullpage-cont .content-grid .col {
+    border: 1px solid ${({ theme }) => theme.text};
+  }
   `;

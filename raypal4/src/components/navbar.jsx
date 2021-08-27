@@ -25,10 +25,15 @@ const NavBar = () => {
       link: "/",
       icon: "home",
     },
+    // {
+    //   title: "About",
+    //   link: "/about",
+    //   icon: "person",
+    // },
     {
-      title: "About",
-      link: "/about",
-      icon: "person",
+      title: "Projects",
+      link: "/projects",
+      icon: "folder",
     },
     {
       title: "Music",

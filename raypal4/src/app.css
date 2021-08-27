@@ -216,17 +216,6 @@ body {
   transition: all 0.5s ease;
 }
 
-.jeader {
-  display: flex;
-}
-
-.test {
-  margin: 10px;
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-
 .section-body {
   min-height: 100vh;
   height: 100%;
@@ -235,7 +224,7 @@ body {
 }
 
 /* background BB8 Loader */
-.background-loader {
+/* .background-loader {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -251,4 +240,4 @@ body {
   height: 30%;
   bottom: 0%;
   z-index: -2;
-}
+} */
